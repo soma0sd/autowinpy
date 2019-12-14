@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+_backup/
+*.b.py
 *.py[cod]
 *$py.class
 
@@ -70,6 +72,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/doctrees/
 
 # PyBuilder
 target/

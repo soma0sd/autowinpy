@@ -1,0 +1,242 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>UI 클래스 &#8212; autowinpy 0.0.0 문서</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="autowinpy.win32" href="mod_win32.html" />
+    <link rel="prev" title="autowinpy 패키지" href="autowinpy.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>탐색</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="전체 색인"
+             accesskey="I">색인</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python 모듈 목록"
+             >모듈</a> |</li>
+        <li class="right" >
+          <a href="mod_win32.html" title="autowinpy.win32"
+             accesskey="N">다음</a> |</li>
+        <li class="right" >
+          <a href="autowinpy.html" title="autowinpy 패키지"
+             accesskey="P">이전</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="reference.html" accesskey="U">패키지 레퍼런스</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>이전 항목</h4>
+  <p class="topless"><a href="autowinpy.html"
+                        title="이전 장">autowinpy 패키지</a></p>
+  <h4>다음 항목</h4>
+  <p class="topless"><a href="mod_win32.html"
+                        title="다음 장">autowinpy.win32</a></p>
+  <div role="note" aria-label="source link">
+    <h3>현재 문서</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cls_UI.rst.txt"
+            rel="nofollow">소스 보기</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">빠른 검색</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="이동" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ui">
+<span id="autowinpy-ui"></span><h1>UI 클래스<a class="headerlink" href="#ui" title="제목 주소">¶</a></h1>
+<dl class="class">
+<dt id="autowinpy.UI">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">UI</code><span class="sig-paren">(</span><em class="sig-param">hwnd</em>, <em class="sig-param">parent: autowinpy.UI = None</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.UI" title="정의 주소">¶</a></dt>
+<dd><p>기반 클래스: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>윈도우와 컨트롤을 핸들링하기 위한 클래스.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hwnd</strong> (<em>int</em>) – 윈도우 핸들.</p></li>
+<li><p><strong>[</strong><strong>옵션</strong><strong>]</strong><strong>parent</strong> (<a class="reference internal" href="#autowinpy.UI" title="autowinpy.UI"><code class="xref py py-class docutils literal notranslate"><span class="pre">UI</span></code></a>) – 부모 (윈도우)</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>UI클래스</strong> 는 윈도우가 비활성 상태일 때도 캡쳐나
+클릭 등을 수행하기 위한 클래스입니다.
+<a class="reference internal" href="mod_win32.html#autowinpy.win32.get_windows" title="autowinpy.win32.get_windows"><code class="xref py py-func docutils literal notranslate"><span class="pre">win32.get_windows()</span></code></a> 는 현재 실행중인 윈도우와 컨트롤로부터
+UI 클래스 요소를 만드는 손쉬운 방법을 제공합니다.</p>
+<p><strong>parent</strong> 매개변수는 UI가 특정 윈도우의 컨트롤인
+경우에 사용합니다. 윈도우에서 컨트롤의 상대적인 위치
+등을 계산하기 위해 필요합니다.</p>
+<dl class="method">
+<dt id="autowinpy.UI.childs">
+<em class="property">property </em><code class="sig-name descname">childs</code><a class="headerlink" href="#autowinpy.UI.childs" title="정의 주소">¶</a></dt>
+<dd><p>자식 목록.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>([<cite>UI</cite>]) 자식 윈도우/컨트롤 목록.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.hwnd">
+<em class="property">property </em><code class="sig-name descname">hwnd</code><a class="headerlink" href="#autowinpy.UI.hwnd" title="정의 주소">¶</a></dt>
+<dd><p>핸들 출력.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>int</cite>) 윈도우의 고유 핸들</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.is_active">
+<em class="property">property </em><code class="sig-name descname">is_active</code><a class="headerlink" href="#autowinpy.UI.is_active" title="정의 주소">¶</a></dt>
+<dd><p>제어 가능 여부.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>bool</cite>) 패키지로 제어할 수 있는 요소인지 확인합니다.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.is_child">
+<em class="property">property </em><code class="sig-name descname">is_child</code><a class="headerlink" href="#autowinpy.UI.is_child" title="정의 주소">¶</a></dt>
+<dd><p>부모 존재 확인.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>bool</cite>) 부모가 있는 UI인지 확인합니다.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#autowinpy.UI.name" title="정의 주소">¶</a></dt>
+<dd><p>이름.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>str</cite>) 현재 윈도우가 가지고 있는 문자열</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.parent">
+<em class="property">property </em><code class="sig-name descname">parent</code><a class="headerlink" href="#autowinpy.UI.parent" title="정의 주소">¶</a></dt>
+<dd><p>부모 UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p><p>(<cite>UI</cite>) 부모가 있는 경우 부모 UI를 반환.</p>
+<p>(<cite>None</cite>) 부모가 없는 경우.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.rect">
+<em class="property">property </em><code class="sig-name descname">rect</code><a class="headerlink" href="#autowinpy.UI.rect" title="정의 주소">¶</a></dt>
+<dd><p>윈도우 영역.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p><p>(<cite>left, top, right, bottom</cite>) 윈도우 영역의 좌표.
+부모가 있는 경우에는 부모를 기준으로 하는 상대좌표.</p>
+<p>자세한 내용은 <a class="reference internal" href="mod_win32.html#autowinpy.win32.get_window_rect" title="autowinpy.win32.get_window_rect"><code class="xref py py-func docutils literal notranslate"><span class="pre">win32.get_window_rect()</span></code></a> 참조.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#autowinpy.UI.size" title="정의 주소">¶</a></dt>
+<dd><p>윈도우 크기.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>width, height</cite>) 윈도우의 폭과 높이.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.UI.view_array">
+<code class="sig-name descname">view_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#autowinpy.UI.view_array" title="정의 주소">¶</a></dt>
+<dd><p>스크린 캡쳐.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>opencv.mat</cite>)윈도우 스크린샷 이미지.</p>
+</dd>
+</dl>
+<p>자세한 내용은 <a class="reference internal" href="mod_win32.html#autowinpy.win32.get_window_view_array" title="autowinpy.win32.get_window_view_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">win32.get_window_view_array()</span></code></a> 참조.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>탐색</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="전체 색인"
+             >색인</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python 모듈 목록"
+             >모듈</a> |</li>
+        <li class="right" >
+          <a href="mod_win32.html" title="autowinpy.win32"
+             >다음</a> |</li>
+        <li class="right" >
+          <a href="autowinpy.html" title="autowinpy 패키지"
+             >이전</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="reference.html" >패키지 레퍼런스</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, soma0sd.
+      <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0 버전으로 생성되었습니다.
+    </div>
+  </body>
+</html>
