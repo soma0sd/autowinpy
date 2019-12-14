@@ -1,5 +1,5 @@
 # AutoWinPy
-
+[![Build Status](https://travis-ci.com/soma0sd/autowinpy.svg?branch=master)](https://travis-ci.com/soma0sd/autowinpy)
 
 윈도우 앱의 자동화를 편리하게 만들어주는 패키지입니다.
 
