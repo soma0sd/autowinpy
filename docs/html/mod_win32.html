@@ -19,6 +19,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="색인" href="genindex.html" />
     <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="tkinter 지원" href="mod_tk.html" />
     <link rel="prev" title="UI 클래스" href="cls_UI.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -35,6 +36,9 @@
           <a href="py-modindex.html" title="Python 모듈 목록"
              >모듈</a> |</li>
         <li class="right" >
+          <a href="mod_tk.html" title="tkinter 지원"
+             accesskey="N">다음</a> |</li>
+        <li class="right" >
           <a href="cls_UI.html" title="UI 클래스"
              accesskey="P">이전</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
@@ -46,6 +50,9 @@
   <h4>이전 항목</h4>
   <p class="topless"><a href="cls_UI.html"
                         title="이전 장">UI 클래스</a></p>
+  <h4>다음 항목</h4>
+  <p class="topless"><a href="mod_tk.html"
+                        title="다음 장">tkinter 지원</a></p>
   <div role="note" aria-label="source link">
     <h3>현재 문서</h3>
     <ul class="this-page-menu">
@@ -85,12 +92,12 @@
 </dd>
 </dl>
 <p class="rubric">예제</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="kn">as</span> <span class="nn">awp</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
 <span class="kn">from</span> <span class="nn">win32</span> <span class="kn">import</span> <span class="n">win32gui</span>
 
 <span class="n">window_list</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">win32</span><span class="o">.</span><span class="n">get_windows</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">hwnd</span> <span class="ow">in</span> <span class="n">window_list</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>현재 윈도우 핸들을 나열합니다.</p>
@@ -109,15 +116,15 @@
 </dd>
 </dl>
 <p class="rubric">예제</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="kn">as</span> <span class="nn">awp</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
 <span class="kn">from</span> <span class="nn">win32</span> <span class="kn">import</span> <span class="n">win32gui</span>
 
 <span class="n">window_list</span> <span class="o">=</span> <span class="n">get_windows</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">hwnd</span> <span class="ow">in</span> <span class="n">window_list</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">))</span>
     <span class="n">childs_list</span> <span class="o">=</span> <span class="n">get_child_windows</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">chwnd</span> <span class="ow">in</span> <span class="n">childs_list</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">chwnd</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">chwnd</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>현재 윈도우와 자식 핸들 명칭을 나열합니다.</p>
@@ -177,6 +184,9 @@
           <a href="py-modindex.html" title="Python 모듈 목록"
              >모듈</a> |</li>
         <li class="right" >
+          <a href="mod_tk.html" title="tkinter 지원"
+             >다음</a> |</li>
+        <li class="right" >
           <a href="cls_UI.html" title="UI 클래스"
              >이전</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
@@ -185,7 +195,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, soma0sd.
-      <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0 버전으로 생성되었습니다.
+      <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.2 버전으로 생성되었습니다.
     </div>
   </body>
 </html>

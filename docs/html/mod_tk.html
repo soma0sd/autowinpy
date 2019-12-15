@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>autowinpy 패키지 &#8212; autowinpy 0.0.0 문서</title>
+    <title>tkinter 지원 &#8212; autowinpy 0.0.0 문서</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
@@ -19,8 +19,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="색인" href="genindex.html" />
     <link rel="search" title="검색" href="search.html" />
-    <link rel="next" title="UI 클래스" href="cls_UI.html" />
-    <link rel="prev" title="패키지 레퍼런스" href="reference.html" />
+    <link rel="prev" title="autowinpy.win32" href="mod_win32.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -36,10 +35,7 @@
           <a href="py-modindex.html" title="Python 모듈 목록"
              >모듈</a> |</li>
         <li class="right" >
-          <a href="cls_UI.html" title="UI 클래스"
-             accesskey="N">다음</a> |</li>
-        <li class="right" >
-          <a href="reference.html" title="패키지 레퍼런스"
+          <a href="mod_win32.html" title="autowinpy.win32"
              accesskey="P">이전</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="reference.html" accesskey="U">패키지 레퍼런스</a> &#187;</li> 
@@ -47,24 +43,13 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">목차</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">autowinpy 패키지</a><ul>
-<li><a class="reference internal" href="#id1">autowinpy</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>이전 항목</h4>
-  <p class="topless"><a href="reference.html"
-                        title="이전 장">패키지 레퍼런스</a></p>
-  <h4>다음 항목</h4>
-  <p class="topless"><a href="cls_UI.html"
-                        title="다음 장">UI 클래스</a></p>
+  <p class="topless"><a href="mod_win32.html"
+                        title="이전 장">autowinpy.win32</a></p>
   <div role="note" aria-label="source link">
     <h3>현재 문서</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/autowinpy.rst.txt"
+      <li><a href="_sources/mod_tk.rst.txt"
             rel="nofollow">소스 보기</a></li>
     </ul>
    </div>
@@ -86,11 +71,31 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-autowinpy">
-<span id="autowinpy"></span><h1>autowinpy 패키지<a class="headerlink" href="#module-autowinpy" title="제목 주소">¶</a></h1>
-<div class="section" id="id1">
-<h2>autowinpy<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+  <div class="section" id="module-autowinpy.tk">
+<span id="tkinter"></span><span id="autowinpy-tk"></span><h1>tkinter 지원<a class="headerlink" href="#module-autowinpy.tk" title="제목 주소">¶</a></h1>
+<p>tkinter는 쉽게 사용할 수 있는 GUI 패키지입니다.</p>
+<dl class="function">
+<dt id="autowinpy.tk.tk_image">
+<code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tk_image</code><span class="sig-paren">(</span><em class="sig-param">image: numpy.ndarray</em>, <em class="sig-param">dsize: Tuple[int</em>, <em class="sig-param">int] = None</em><span class="sig-paren">)</span> &#x2192; PIL.ImageTk<a class="headerlink" href="#autowinpy.tk.tk_image" title="정의 주소">¶</a></dt>
+<dd><p>OpenCV 이미지를 Tk 이미지로 변환.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<cite>opencv.mat</cite>) – OpenCV용 이미지요소.</p></li>
+<li><p><strong>dsize</strong> (<cite>(width, height)</cite>) – [옵션] 변환할 사이즈.</p></li>
+</ul>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p>(<cite>ImageTK</cite>) tkinter 위젯에 사용할 수 있는 이미지 요소.</p>
+</dd>
+</dl>
+<p class="rubric">예제</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
+<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+</pre></div>
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -109,10 +114,7 @@
           <a href="py-modindex.html" title="Python 모듈 목록"
              >모듈</a> |</li>
         <li class="right" >
-          <a href="cls_UI.html" title="UI 클래스"
-             >다음</a> |</li>
-        <li class="right" >
-          <a href="reference.html" title="패키지 레퍼런스"
+          <a href="mod_win32.html" title="autowinpy.win32"
              >이전</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="reference.html" >패키지 레퍼런스</a> &#187;</li> 

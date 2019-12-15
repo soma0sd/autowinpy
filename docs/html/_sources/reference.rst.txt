@@ -8,3 +8,4 @@
    autowinpy
    cls_UI
    mod_win32
+   mod_tk

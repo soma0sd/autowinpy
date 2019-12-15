@@ -1,5 +1,13 @@
 # AutoWinPy
-[![Build Status](https://travis-ci.com/soma0sd/autowinpy.svg?branch=master)](https://travis-ci.com/soma0sd/autowinpy)
+![lang](https://img.shields.io/badge/language-python-blue?style=for-the-badge)
+![build](https://img.shields.io/badge/build-develop-red?style=for-the-badge)
+![license](https://img.shields.io/github/license/soma0sd/autowinpy?style=for-the-badge)
+![Pre-Release Date](https://img.shields.io/github/release-date-pre/soma0sd/autowinpy?style=for-the-badge)
+
+![platform: windows 10](https://img.shields.io/badge/platform-windows%2010-brightgreen)
+![platform: windows 8.1](https://img.shields.io/badge/platform-windows%208.1-lightgrey)
+![platform: windows 7](https://img.shields.io/badge/platform-windows%207-lightgrey)
+
 
 윈도우 앱의 자동화를 편리하게 만들어주는 패키지입니다.
 
