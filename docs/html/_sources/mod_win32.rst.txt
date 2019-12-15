@@ -1,6 +1,6 @@
 .. _autowinpy.win32 :
 
-autowinpy.win32
+win32 모듈
 ===============
 
 .. automodule:: autowinpy.win32

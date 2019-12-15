@@ -1,87 +1,168 @@
 
 
-<!doctype html>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>win32 모듈 &mdash; autowinpy 0.1.0 문서</title>
+  
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <title>autowinpy.win32 &#8212; autowinpy 0.0.0 문서</title>
-    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+  
+  
+
+  
+
+  
+  
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="_static/bizstyle.js"></script>
-    <link rel="index" title="색인" href="genindex.html" />
-    <link rel="search" title="검색" href="search.html" />
-    <link rel="next" title="tkinter 지원" href="mod_tk.html" />
-    <link rel="prev" title="UI 클래스" href="cls_UI.html" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
-    <![endif]-->
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>탐색</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="전체 색인"
-             accesskey="I">색인</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python 모듈 목록"
-             >모듈</a> |</li>
-        <li class="right" >
-          <a href="mod_tk.html" title="tkinter 지원"
-             accesskey="N">다음</a> |</li>
-        <li class="right" >
-          <a href="cls_UI.html" title="UI 클래스"
-             accesskey="P">이전</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="reference.html" accesskey="U">패키지 레퍼런스</a> &#187;</li> 
-      </ul>
-    </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>이전 항목</h4>
-  <p class="topless"><a href="cls_UI.html"
-                        title="이전 장">UI 클래스</a></p>
-  <h4>다음 항목</h4>
-  <p class="topless"><a href="mod_tk.html"
-                        title="다음 장">tkinter 지원</a></p>
-  <div role="note" aria-label="source link">
-    <h3>현재 문서</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/mod_win32.rst.txt"
-            rel="nofollow">소스 보기</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">빠른 검색</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="이동" />
-    </form>
-    </div>
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="autowinpy 0.1.0 문서" href="index.html"/>
+        <link rel="up" title="패키지 레퍼런스" href="reference.html"/>
+        <link rel="next" title="tkinter 지원" href="mod_tk.html"/>
+        <link rel="prev" title="UI 클래스" href="cls_UI.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> autowinpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">패키지 살펴보기</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">패키지 레퍼런스</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="autowinpy.html">autowinpy 패키지</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cls_UI.html">UI 클래스</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">win32 모듈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mod_tk.html">tkinter 지원</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
         </div>
       </div>
+    </nav>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">autowinpy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="reference.html">패키지 레퍼런스</a> &raquo;</li>
+        
+      <li>win32 모듈</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
             
-  <div class="section" id="autowinpy-win32">
-<span id="id1"></span><h1>autowinpy.win32<a class="headerlink" href="#autowinpy-win32" title="제목 주소">¶</a></h1>
-<span class="target" id="module-autowinpy.win32"></span><p>win32 모듈이 내장하고 있는 함수는 UI 클래스의
-기능을 대부분 가집니다.</p>
+            <a href="_sources/mod_win32.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-autowinpy.win32">
+<span id="win32"></span><span id="autowinpy-win32"></span><h1>win32 모듈<a class="headerlink" href="#module-autowinpy.win32" title="제목 주소">¶</a></h1>
+<p>win32 모듈이 내장하고 있는 함수는 UI 클래스의
+기능을 대부분 탑재하고 있습니다.</p>
 <dl class="function">
 <dt id="autowinpy.win32.get_windows">
 <code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">get_windows</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#autowinpy.win32.get_windows" title="정의 주소">¶</a></dt>
@@ -153,7 +234,7 @@
 
 <dl class="function">
 <dt id="autowinpy.win32.get_window_view_array">
-<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">get_window_view_array</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#autowinpy.win32.get_window_view_array" title="정의 주소">¶</a></dt>
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">get_window_view_array</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#autowinpy.win32.get_window_view_array" title="정의 주소">¶</a></dt>
 <dd><p>윈도우 화면을 가져옵니다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">매개변수</dt>
@@ -161,7 +242,7 @@
 </dd>
 <dt class="field-even">반환값</dt>
 <dd class="field-even"><p>(<cite>opencv.mat</cite>) 선택한 창의 내용을 OpenCV나 Numpy에서 사용할
-수 있는 RGB이미지를 출력합니다.</p>
+수 있는 BGR이미지를 출력합니다.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -169,33 +250,74 @@
 </div>
 
 
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mod_tk.html" class="btn btn-neutral float-right" title="tkinter 지원" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cls_UI.html" class="btn btn-neutral" title="UI 클래스" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, soma0sd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>탐색</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="전체 색인"
-             >색인</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python 모듈 목록"
-             >모듈</a> |</li>
-        <li class="right" >
-          <a href="mod_tk.html" title="tkinter 지원"
-             >다음</a> |</li>
-        <li class="right" >
-          <a href="cls_UI.html" title="UI 클래스"
-             >이전</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">autowinpy 0.0.0 문서</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="reference.html" >패키지 레퍼런스</a> &#187;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, soma0sd.
-      <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.2 버전으로 생성되었습니다.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

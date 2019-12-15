@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "autowinpy"
+        },
+        {
             "name": "Current File",
             "type": "python",
             "request": "launch",
@@ -16,6 +22,13 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceRoot}/DevilTwinsAuto.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "TEST File",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/test.py",
             "console": "integratedTerminal"
         }
     ]

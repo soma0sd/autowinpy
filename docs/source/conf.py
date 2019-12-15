@@ -12,8 +12,9 @@
 #
 import os
 import sys
+import sphinx_theme
 sys.path.insert(0, os.path.abspath('../..'))
-
+import autowinpy
 
 # -- Project information -----------------------------------------------------
 
@@ -22,7 +23,7 @@ copyright = '2019, soma0sd'
 author = 'soma0sd'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.0'
+release = autowinpy.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -57,8 +58,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'bizstyle'
+# neo_rtd_theme
+html_theme = 'neo_rtd_theme'
+# html_theme = 'stanford_theme'
+html_theme_path = ["_themes/sphinx_theme", ]
 html_css_files = [
   'style.css'
 ]

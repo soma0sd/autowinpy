@@ -121,7 +121,8 @@ class UI(object):
     out: List[UI] = [UI(i) for i in handles]
     return [ui for ui in out if ui.is_active]
 
-  def view_array(self) -> np.ndarray:
+  @property
+  def screen_array(self) -> np.ndarray:
     """스크린 캡쳐.
 
     Returns:

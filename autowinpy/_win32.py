@@ -1,16 +1,18 @@
 """
 
 win32 모듈이 내장하고 있는 함수는 UI 클래스의
-기능을 대부분 가집니다.
+기능을 대부분 탑재하고 있습니다.
 
 """
-from win32 import win32gui
+from win32 import win32gui, win32api
 from win32.lib import win32con
 from pythonwin import win32ui
+from PIL import Image
 from ctypes import windll, wintypes
 from ctypes import byref
 from typing import List, Tuple
 import numpy as np
+import cv2
 
 HWND = int
 
@@ -112,7 +114,7 @@ def get_window_rect(toHWND: HWND, fromHWND: HWND=None) -> Tuple[int, int, int, i
     bottom = toRect.bottom - fromRect.top
     return left, right, top, bottom
 
-def get_window_view_array(self, hwnd:HWND) -> np.ndarray:
+def get_window_view_array(hwnd:HWND) -> np.ndarray:
   """윈도우 화면을 가져옵니다.
 
   Args:
@@ -120,24 +122,29 @@ def get_window_view_array(self, hwnd:HWND) -> np.ndarray:
 
   Return:
     (`opencv.mat`) 선택한 창의 내용을 OpenCV나 Numpy에서 사용할
-    수 있는 RGB이미지를 출력합니다.
+    수 있는 BGR이미지를 출력합니다.
   """
+  # window rect and size
   x0, y0, x1, y1 = get_window_rect(hwnd)
   w, h = x1 - x0, y1 - y0
+  ## create DC
   wDC = win32gui.GetWindowDC(hwnd)
   dcObj = win32ui.CreateDCFromHandle(wDC)
   cDC = dcObj.CreateCompatibleDC()
+  ## bitmap object make & select
   dataBitMap = win32ui.CreateBitmap()
   dataBitMap.CreateCompatibleBitmap(dcObj, w, h)
   cDC.SelectObject(dataBitMap)
-  cDC.BitBlt((0, 0), (w, h), dcObj, (x0, y0), win32con.SRCCOPY)
-
-  signedIntsArray = dataBitMap.GetBitmapBits(True)
-  img = np.fromstring(signedIntsArray, dtype='uint8')
-  img.shape = (h, w, 4)
-
+  ## capturing window
+  windll.user32.PrintWindow(hwnd, cDC.GetSafeHdc(), 0x2)
+  ## formating image
+  bmparray = np.asarray(dataBitMap.GetBitmapBits(), dtype='uint8')
+  bmp_pil = Image.frombuffer('RGB', (w, h), bmparray, 'raw', 'BGRX', 0, 1)
+  img = np.array(bmp_pil)
+  img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+  # close DC
+  win32gui.DeleteObject(dataBitMap.GetHandle())
   dcObj.DeleteDC()
   cDC.DeleteDC()
   win32gui.ReleaseDC(hwnd, wDC)
-  win32gui.DeleteObject(dataBitMap.GetHandle())
   return img
