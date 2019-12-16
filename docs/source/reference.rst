@@ -3,9 +3,10 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: 문서 목록:
 
-   autowinpy
    cls_UI
+   cls_Template
    mod_win32
+   mod_cv
    mod_tk

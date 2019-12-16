@@ -1,17 +1,17 @@
 # AutoWinPy
-[![version](https://img.shields.io/badge/version-0.1.0-blueviolet?style=for-the-badge)]()
-[![lang](https://img.shields.io/badge/language-python-blue?style=for-the-badge)]()
-[![license](https://img.shields.io/github/license/soma0sd/autowinpy?style=for-the-badge)]()
-[![Pre-Release Date](https://img.shields.io/github/release-date-pre/soma0sd/autowinpy?style=for-the-badge)]()
-[![PyPI](https://img.shields.io/pypi/v/autowinpy?style=for-the-badge)]()
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/autowinpy?style=for-the-badge)]()
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/autowinpy?style=for-the-badge)]()
+[![version](https://img.shields.io/badge/version-0.1.0-blueviolet)](#)
+[![lang](https://img.shields.io/badge/language-python-blue)](#)
+[![license](https://img.shields.io/github/license/soma0sd/autowinpy)](#)
+[![Pre-Release Date](https://img.shields.io/github/release-date-pre/soma0sd/autowinpy)](#)
+[![PyPI](https://img.shields.io/pypi/v/autowinpy)](#)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/autowinpy)](#)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/autowinpy)](#)
 
-[![platform: windows 10](https://img.shields.io/badge/OS-windows%2010-brightgreen)]()
-[![platform: windows 8.1](https://img.shields.io/badge/OS-windows%208.1-lightgrey)]()
-[![platform: windows 7](https://img.shields.io/badge/OS-windows%207-lightgrey)]()
+[![platform: windows 10](https://img.shields.io/badge/OS-windows%2010-brightgreen)](#)
+[![platform: windows 8.1](https://img.shields.io/badge/OS-windows%208.1-lightgrey)](#)
+[![platform: windows 7](https://img.shields.io/badge/OS-windows%207-lightgrey)](#)
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/autowinpy?style=for-the-badge)]()
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/autowinpy)](#)
 
 
 윈도우 앱의 자동화를 편리하게 만들어주는 패키지입니다.
@@ -33,4 +33,4 @@
 것을 추천합니다.
 
 * 사용자매뉴얼: https://soma0sd.github.io/autowinpy/
-* PyPI: https://pypi.org/project/autowinpy/0.1.0/
+* PyPI: https://pypi.org/project/autowinpy/

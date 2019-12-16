@@ -6,7 +6,19 @@
 AutoWinPy 사용자매뉴얼
 =======================
 
-AutoWinPy는 윈도우 OS에서 작동하는 앱의 자동화를 위한 도구입니다.
+.. image:: https://img.shields.io/github/license/soma0sd/autowinpy
+  :alt: License
+.. image:: https://img.shields.io/pypi/v/autowinpy?label=Release
+  :alt: Release
+
+
+.. image:: https://img.shields.io/badge/Windows-10%20%7C%208.1%20%7C%207-brightgreen
+  :alt: Windows Version - 10, 8.1, 7
+.. image:: https://img.shields.io/pypi/pyversions/autowinpy
+  :alt: Python Version
+
+
+AutoWinPy는 윈도우 OS에서 작동하는 앱을 자동으로 제어할 수 있는
 
 
 주요 기능
@@ -17,6 +29,12 @@ AutoWinPy는 윈도우 OS에서 작동하는 앱의 자동화를 위한 도구�
 * 활성/비활성 윈도우의 스크린샷을 가져옵니다.
 * 활성/비활성 윈도우에 클릭이나 키 입력 등의 명령을 보냅니다.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: 문서 목록:
+
+   overview
+   reference
 
 종속성
 ------
@@ -68,22 +86,14 @@ HIDPI지원 상태로 바꿉니다. 이것으로 인해 자동화 프로그램�
 작업 중 생기는 일이므로 임의로 HIDPI지원을 끈다면 패키지가
 정상적으로 동작하지 않습니다.
 
-빠른 시작
+업데이트
 ---------
 
-.. code-block:: python
-
-  import autowinpy as awp
+* **0.1.0** : 이제 PyPI를 통해 설치할 수 있습니다.
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+추가할 기능
+------------
 
-   overview
-   reference
-
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* **0.2.0** : Tkinter GUI 지원
+* **0.2.0** : OpenCV 기반 이미지서칭 지원

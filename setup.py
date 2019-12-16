@@ -6,6 +6,9 @@ import autowinpy
 # python setup.py bdist_wheel
 ## CMD: upload to pypi
 # twine upload dist/{}
+with open('readme.md',encoding='utf8') as f:
+    description = f.read()
+
 setup(
     name             = "autowinpy",
     # FIXME: Synchronization Package Version / Download url Version
@@ -13,6 +16,8 @@ setup(
     version          = '0.1.0',
     packages         = find_packages(exclude = ['docs', '.vscode']),
     description      = 'Foreground automation support for Windows OS',
+    long_description = description,
+    long_description_content_type='text/markdown',
     author           = 'soma0sd',
     author_email     = 'soma0sd@gmail.com',
     url              = 'https://github.com/soma0sd/autowinpy',
