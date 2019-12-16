@@ -1,6 +1,7 @@
 """
 
-tkinter는 쉽게 사용할 수 있는 GUI 패키지입니다.
+내장 GUI 패키지인 Tkinter와 AutoWinPy를 사용하는 경우
+**autowinpy.tk** 모듈의 함수와 클래스를 사용할 수 있습니다.
 """
 from . import _win32
 from . import _types
@@ -46,7 +47,7 @@ class tkWindowCombo(ttk.Combobox):
 
     Args:
         master: 상위 위젯
-        kw: 속성 (TK레퍼런스_ 참조)
+        **kw: 속성 (TK레퍼런스_ 참조)
 
     tkinter GUI에서 사용할 수 있는 윈도우선택 콤보박스
     입니다.
@@ -104,7 +105,7 @@ class tkWindowCombo(ttk.Combobox):
         """함수 바인딩
 
         Args:
-            func: 선택시 작동할 함수를 등록
+            func: 선택시 콜백
 
         콜백함수 **func** 는 콤보 목록에서 하나를 선택하는 경우 작동합니다.
         """

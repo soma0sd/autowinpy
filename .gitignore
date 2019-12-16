@@ -1,6 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 _backup/
+test.py
+test*.py
 *.b.py
 *.py[cod]
 *$py.class

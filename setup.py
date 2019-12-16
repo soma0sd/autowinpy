@@ -1,0 +1,37 @@
+from setuptools import setup, find_packages
+import autowinpy
+
+
+## CMD: create wheel
+# python setup.py bdist_wheel
+## CMD: upload to pypi
+# twine upload dist/{}
+setup(
+    name             = "autowinpy",
+    # FIXME: Synchronization Package Version / Download url Version
+    download_url     = 'https://github.com/soma0sd/autowinpy/archive/0.1.0.tar.gz',
+    version          = '0.1.0',
+    packages         = find_packages(exclude = ['docs', '.vscode']),
+    description      = 'Foreground automation support for Windows OS',
+    author           = 'soma0sd',
+    author_email     = 'soma0sd@gmail.com',
+    url              = 'https://github.com/soma0sd/autowinpy',
+    install_requires = [
+        "pywin32",
+        "opencv-python",
+        "numpy",
+        "Pillow"
+    ],
+    keywords         = ['windows', 'automation', 'macro'],
+    python_requires  = '>=3',
+    package_data     =  {},
+    zip_safe=False,
+    classifiers      = [
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8'
+    ]
+)
