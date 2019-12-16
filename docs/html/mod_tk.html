@@ -100,11 +100,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">패키지 살펴보기</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">패키지 레퍼런스</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="cls_UI.html">UI 클래스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cls_Gui.html">GUI 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cls_Template.html">탬플릿 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_win32.html">win32 모듈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_cv.html">이미지 제어 모듈</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tkinter 지원</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tkinter 지원</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tk">tk 함수</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkwindowcombo">tkWindowCombo 클래스</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkchildcombo">tkChildCombo 클래스</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -176,6 +181,63 @@
 <span id="tkinter"></span><span id="autowinpy-tk"></span><h1>tkinter 지원<a class="headerlink" href="#module-autowinpy.tk" title="제목 주소">¶</a></h1>
 <p>내장 GUI 패키지인 Tkinter와 AutoWinPy를 사용하는 경우
 <strong>autowinpy.tk</strong> 모듈의 함수와 클래스를 사용할 수 있습니다.</p>
+<p class="rubric">예제</p>
+<p>윈도우를 선택하면 윈도우의 스크린샷을 라벨에 표시하는
+스크립트.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
+<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">def</span> <span class="nf">select_gui</span><span class="p">():</span>
+    <span class="c1"># 윈도우 선택시 실행할 함수</span>
+    <span class="k">global</span> <span class="n">combo</span><span class="p">,</span> <span class="n">label</span>
+    <span class="n">window</span><span class="p">:</span> <span class="n">awp</span><span class="o">.</span><span class="n">Gui</span> <span class="o">=</span> <span class="n">combo</span><span class="o">.</span><span class="n">window</span>
+    <span class="n">im_ar</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">screen_array</span>
+    <span class="n">dsize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">im_tk</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tk_image</span><span class="p">(</span><span class="n">im_ar</span><span class="p">,</span> <span class="n">dsize</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im_tk</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">im_tk</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;윈도우 선택: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window</span><span class="p">))</span>
+    <span class="k">return</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">combo</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkWindowCombo</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">combo</span><span class="o">.</span><span class="n">bind_select</span><span class="p">(</span><span class="n">select_gui</span><span class="p">)</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">combo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">예제</p>
+<p>윈도우 선택 후, 컨트롤을 선택하면 컨트롤의 스크린샷을 라벨에 전달.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
+<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">def</span> <span class="nf">select_gui</span><span class="p">():</span>
+    <span class="c1"># 윈도우 선택시 실행할 함수</span>
+    <span class="k">global</span> <span class="n">combo_sub</span><span class="p">,</span> <span class="n">label</span>
+    <span class="n">window</span><span class="p">:</span> <span class="n">awp</span><span class="o">.</span><span class="n">Gui</span> <span class="o">=</span> <span class="n">combo_sub</span><span class="o">.</span><span class="n">window</span>
+    <span class="n">im_ar</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">screen_array</span>
+    <span class="n">dsize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">im_tk</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tk_image</span><span class="p">(</span><span class="n">im_ar</span><span class="p">,</span> <span class="n">dsize</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im_tk</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">im_tk</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;윈도우 선택: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window</span><span class="p">))</span>
+    <span class="k">return</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">combo_win</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkWindowCombo</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">combo_sub</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkChildCombo</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">combo_win</span><span class="p">)</span>
+<span class="n">combo_sub</span><span class="o">.</span><span class="n">bind_select</span><span class="p">(</span><span class="n">select_gui</span><span class="p">)</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">combo_win</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">combo_sub</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="tk">
+<h2>tk 함수<a class="headerlink" href="#tk" title="제목 주소">¶</a></h2>
 <dl class="function">
 <dt id="autowinpy.tk.tk_image">
 <code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tk_image</code><span class="sig-paren">(</span><em class="sig-param">image: numpy.ndarray</em>, <em class="sig-param">dsize: Tuple[int</em>, <em class="sig-param">int] = None</em><span class="sig-paren">)</span> &#x2192; PIL.ImageTk<a class="headerlink" href="#autowinpy.tk.tk_image" title="정의 주소">¶</a></dt>
@@ -198,6 +260,9 @@
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="tkwindowcombo">
+<h2>tkWindowCombo 클래스<a class="headerlink" href="#tkwindowcombo" title="제목 주소">¶</a></h2>
 <dl class="class">
 <dt id="autowinpy.tk.tkWindowCombo">
 <em class="property">class </em><code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tkWindowCombo</code><span class="sig-paren">(</span><em class="sig-param">master=None</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.tk.tkWindowCombo" title="정의 주소">¶</a></dt>
@@ -211,7 +276,7 @@
 </dd>
 </dl>
 <p>tkinter GUI에서 사용할 수 있는 윈도우선택 콤보박스
-입니다.</p>
+입니다. <a class="reference external" href="https://www.tcl.tk/man/tcl8.6/TkCmd/ttk_combobox.htm">tkinter.ttk.Combobox</a> 를 상속합니다.</p>
 <p class="rubric">예제</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
 <span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
@@ -236,12 +301,23 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="autowinpy.tk.tkWindowCombo.screen">
+<em class="property">property </em><code class="sig-name descname">screen</code><a class="headerlink" href="#autowinpy.tk.tkWindowCombo.screen" title="정의 주소">¶</a></dt>
+<dd><p>현재 선택한 윈도우의 스크린을 반환.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<cite>numpy.ndarray</cite>) 선택한 윈도우의 이미지</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="autowinpy.tk.tkWindowCombo.window">
 <em class="property">property </em><code class="sig-name descname">window</code><a class="headerlink" href="#autowinpy.tk.tkWindowCombo.window" title="정의 주소">¶</a></dt>
 <dd><p>현재 선택한 윈도우를 출력합니다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>(<a class="reference internal" href="cls_UI.html#autowinpy.UI" title="autowinpy.UI"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.UI</span></code></a>) 선택중인 UI</p>
+<dd class="field-odd"><p>(<a class="reference internal" href="cls_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.Gui</span></code></a>) 선택중인 Gui</p>
 </dd>
 </dl>
 </dd></dl>
@@ -252,13 +328,68 @@
 <dd><p>윈도우 리스트를 출력합니다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>[<a class="reference internal" href="cls_UI.html#autowinpy.UI" title="autowinpy.UI"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.UI</span></code></a>] UI 리스트</p>
+<dd class="field-odd"><p>([<a class="reference internal" href="cls_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.Gui</span></code></a>]) Gui 리스트</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
+</div>
+<div class="section" id="tkchildcombo">
+<h2>tkChildCombo 클래스<a class="headerlink" href="#tkchildcombo" title="제목 주소">¶</a></h2>
+<dl class="class">
+<dt id="autowinpy.tk.tkChildCombo">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tkChildCombo</code><span class="sig-paren">(</span><em class="sig-param">master=None</em>, <em class="sig-param">win_combo=None</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.tk.tkChildCombo" title="정의 주소">¶</a></dt>
+<dd><p>ttk 자식 선택 콤보박스.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>master</strong> – 상위 위젯</p></li>
+<li><p><strong>win_combo</strong> – 윈도우 선택 콤보박스</p></li>
+<li><p><strong>**kw</strong> – 속성 (<a class="reference external" href="https://www.tcl.tk/man/tcl8.6/TkCmd/ttk_combobox.htm">TK레퍼런스</a> 참조)</p></li>
+</ul>
+</dd>
+</dl>
+<p>tkinter GUI에서 <a class="reference internal" href="#autowinpy.tk.tkWindowCombo" title="autowinpy.tk.tkWindowCombo"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.tk.tkWindowCombo</span></code></a> 와 함께 사용할 수
+있는 자식선택 콤보박스 입니다.</p>
+<dl class="method">
+<dt id="autowinpy.tk.tkChildCombo.bind_select">
+<code class="sig-name descname">bind_select</code><span class="sig-paren">(</span><em class="sig-param">func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.tk.tkChildCombo.bind_select" title="정의 주소">¶</a></dt>
+<dd><p>함수 바인딩</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>func</strong> – 선택시 콜백</p>
+</dd>
+</dl>
+<p>콜백함수 <strong>func</strong> 는 콤보 목록에서 하나를 선택하는 경우 작동합니다.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.tk.tkChildCombo.window">
+<em class="property">property </em><code class="sig-name descname">window</code><a class="headerlink" href="#autowinpy.tk.tkChildCombo.window" title="정의 주소">¶</a></dt>
+<dd><p>현재 선택한 윈도우를 출력합니다.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>(<a class="reference internal" href="cls_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.Gui</span></code></a>) 선택중인 Gui</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.tk.tkChildCombo.window_list">
+<em class="property">property </em><code class="sig-name descname">window_list</code><a class="headerlink" href="#autowinpy.tk.tkChildCombo.window_list" title="정의 주소">¶</a></dt>
+<dd><p>윈도우 리스트를 출력합니다.</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>([<a class="reference internal" href="cls_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.Gui</span></code></a>]) Gui 리스트</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 

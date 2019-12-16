@@ -1,7 +1,11 @@
 """
+**autowinpy.win32**
+OS에서 창을 선택하고 제어하는 모듈.
 
-win32 모듈이 내장하고 있는 함수는 UI 클래스의
-기능을 대부분 탑재하고 있습니다.
+이 모듈의 주요 매개변수는 윈도우 핸들(`HWND`)입니다.
+HWDN는 GUI가 나타날 때마다 OS가 부여하는 특별한
+정수값입니다. AutoWinPy는 이 값을 이용해 윈도우의
+GUI에 접근하여 필요한 작업을 수행합니다.
 
 """
 from win32 import win32gui, win32api
@@ -14,26 +18,7 @@ from typing import List, Tuple
 import numpy as np
 import cv2
 
-HWND = int
-
-def _set_windows_dpi() -> float:
-  """[private] windows 8.1 이상을 위한 DPI 조정.
-
-  Return:
-    (float) DPI 배율
-
-  프로세스 환경이 HIDPI 모드로 변경됩니다.
-  이 작업은 좌표 기반의 윈도우 핸들링을 위해
-  반드시 필요합니다.
-  """
-  user32 = windll.user32
-
-  native = user32.GetDpiForSystem()
-  user32.SetProcessDPIAware()
-  scaled = user32.GetDpiForSystem()
-  return scaled / native
-
-def get_windows() -> List[HWND]:
+def get_windows() -> List[int]:
   """핸들 리스트 출력.
 
   Return:
@@ -47,7 +32,7 @@ def get_windows() -> List[HWND]:
 
         window_list = awp.win32.get_windows()
         for hwnd in window_list:
-            print(win32gui.GetWindowText(hwnd))
+            print(awp.win32.get_window_text(hwnd))
     .. code-block
     
     현재 윈도우 핸들을 나열합니다.
@@ -57,7 +42,7 @@ def get_windows() -> List[HWND]:
   win32gui.EnumWindows(enum, out)
   return out
 
-def get_child_windows(hwnd: HWND) -> List[HWND]:
+def get_child_windows(hwnd: int) -> List[int]:
   r"""자식 핸들 리스트 출력.
 
   Args:
@@ -68,14 +53,13 @@ def get_child_windows(hwnd: HWND) -> List[HWND]:
     .. code-block:: python
 
         import autowinpy as awp
-        from win32 import win32gui
 
-        window_list = get_windows()
+        window_list = awp.win32.get_windows()
         for hwnd in window_list:
-            print(win32gui.GetWindowText(hwnd))
-            childs_list = get_child_windows(hwnd)
+            print(awp.win32.get_window_text(hwnd))
+            childs_list = awp.win32.get_child_windows(hwnd)
             for chwnd in childs_list:
-                print("\t", win32gui.GetWindowText(chwnd))
+                print("\t", awp.win32.get_window_text(hwnd))
     .. code-block
     
     현재 윈도우와 자식 핸들 명칭을 나열합니다.
@@ -85,7 +69,17 @@ def get_child_windows(hwnd: HWND) -> List[HWND]:
   win32gui.EnumChildWindows(hwnd, enum, out)
   return out
 
-def get_window_rect(toHWND: HWND, fromHWND: HWND=None) -> Tuple[int, int, int, int]:
+def get_window_text(hwnd: int) -> str:
+    """해당 GUI의 이름을 반환.
+
+    Args:
+        hwnd (`HWND`): 윈도우 핸들
+    Return:
+        (`str`) 선택한 GUI의 이름
+    """
+    return win32gui.GetWindowText(hwnd)
+
+def get_window_rect(toHWND: int, fromHWND: int=None) -> Tuple[int, int, int, int]:
   """윈도우가 그리는 사각영역의 위치좌표를 얻습니다.
 
   Args:
@@ -114,8 +108,8 @@ def get_window_rect(toHWND: HWND, fromHWND: HWND=None) -> Tuple[int, int, int, i
     bottom = toRect.bottom - fromRect.top
     return left, right, top, bottom
 
-def get_window_view_array(hwnd:HWND) -> np.ndarray:
-  """윈도우 화면을 가져옵니다.
+def get_window_screen_array(hwnd: int) -> np.ndarray:
+  """GUI의 현재 화면을 가져옵니다.
 
   Args:
     hwnd(`HWND`): 윈도우 핸들
@@ -148,3 +142,19 @@ def get_window_view_array(hwnd:HWND) -> np.ndarray:
   cDC.DeleteDC()
   win32gui.ReleaseDC(hwnd, wDC)
   return img
+
+def is_active_window(hwnd) -> bool:
+    """GUI의 현재 화면을 가져옵니다.
+
+    Args:
+        hwnd(`HWND`): 윈도우 핸들
+
+    Return:
+        (`bool`) 활성화가 가능하고, 보이는 요소가 있으며,
+        표시할 수 있는 이름을 가진 요소인 경우 `True` 를
+        반환합니다.
+    """
+    WindowEnabled = win32gui.IsWindowEnabled(hwnd)
+    WindowVisible = win32gui.IsWindowVisible(hwnd)
+    HasName = len(get_window_text(hwnd))
+    return bool(WindowEnabled and WindowVisible and HasName)

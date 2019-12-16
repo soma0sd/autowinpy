@@ -1,40 +1,42 @@
-"""
-
-파일 경로: `autowinpy._types.py`
-
-"""
+"""클래스"""
 from . import _win32
-from win32 import win32gui
 from typing import List, Tuple
 import numpy as np
 
-class UI(object):
+class Gui(object):
   """윈도우와 컨트롤을 핸들링하기 위한 클래스.
 
   Args:
     hwnd(int): 윈도우 핸들.
-    [옵션]parent(:class:`UI`): 부모 (윈도우)
+    [옵션]parent(:class:`Gul` or `HWND`): 부모 Gui 혹은 핸들
 
-  **UI클래스** 는 윈도우가 비활성 상태일 때도 캡쳐나
+  **gui클래스** 는 윈도우가 비활성 상태일 때도 캡쳐나
   클릭 등을 수행하기 위한 클래스입니다.
-  :func:`win32.get_windows` 는 현재 실행중인 윈도우와 컨트롤로부터
-  UI 클래스 요소를 만드는 손쉬운 방법을 제공합니다.
+  :func:`win32.get_windows` 는 현재 실행중인 윈도우와
+  컨트롤로부터 Gui 개체를 만드는 손쉬운 방법을 제공합니다.
   
 
-  **parent** 매개변수는 UI가 특정 윈도우의 컨트롤인
+  **parent** 매개변수는 Gui가 특정 윈도우의 컨트롤인
   경우에 사용합니다. 윈도우에서 컨트롤의 상대적인 위치
   등을 계산하기 위해 필요합니다.
   """
 
-  def __init__(self, hwnd, parent: 'autowinpy.UI'=None):
+  def __init__(self, hwnd, parent=None):
     """Window 초기화."""
     super().__init__()
     self._hwnd = hwnd
-    self._parent = parent
+    if parent is None:
+      self._parent = None
+    elif isinstance(parent, type(self)):
+      self._parent = parent
+    elif isinstance(parent, int):
+      self._parent = Gui(parent)
+    else:
+      raise TypeError("parent 매개변수는 int 혹은 Gui 클래스 입니다.")
     return
 
   def __str__(self):
-    """print()."""
+    """print."""
     return "{}".format(self.name)
 
   def __repr__(self):
@@ -55,14 +57,14 @@ class UI(object):
 
     :returns: (`str`) 현재 윈도우가 가지고 있는 문자열
     """
-    return win32gui.GetWindowText(self.hwnd).strip()
+    return _win32.get_window_text(self.hwnd)
 
   @property
-  def parent(self) -> 'autowinpy.UI':
-    """부모 UI.
+  def parent(self) -> 'autowinpy.Gui':
+    """부모 Gui.
 
     Return:
-      (`UI`) 부모가 있는 경우 부모 UI를 반환.
+      (`autowinpy.Gui`) 부모가 있는 경우 부모 Gui를 반환.
 
       (`None`) 부모가 없는 경우.
     """
@@ -98,10 +100,7 @@ class UI(object):
 
     :returns: (`bool`) 패키지로 제어할 수 있는 요소인지 확인합니다.
     """
-    WindowEnabled = win32gui.IsWindowEnabled(self.hwnd)
-    WindowVisible = win32gui.IsWindowVisible(self.hwnd)
-    HasName = len(self.name)
-    return bool(WindowEnabled and WindowVisible and HasName)
+    return _win32.is_active_window(self.hwnd)
 
   @property
   def is_child(self) -> bool:
@@ -112,13 +111,13 @@ class UI(object):
     return False if self._parent is None else True
 
   @property
-  def childs(self) -> List['UI']:
+  def childs(self) -> List['Gui']:
     """자식 목록.
 
-    :returns: ([`UI`]) 자식 윈도우/컨트롤 목록.
+    :returns: ([`Gui`]) 자식 윈도우/컨트롤 목록.
     """
     handles = _win32.get_child_windows(self.hwnd)
-    out: List[UI] = [UI(i) for i in handles]
+    out: List[Gui] = [Gui(i, self) for i in handles]
     return [ui for ui in out if ui.is_active]
 
   @property
@@ -130,5 +129,5 @@ class UI(object):
 
     자세한 내용은 :func:`win32.get_window_view_array` 참조.
     """
-    image = _win32.get_window_view_array(self.hwnd)
+    image = _win32.get_window_screen_array(self.hwnd)
     return image
