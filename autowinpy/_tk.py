@@ -3,68 +3,6 @@
 내장 GUI 패키지인 Tkinter와 AutoWinPy를 사용하는 경우
 **autowinpy.tk** 모듈의 함수와 클래스를 사용할 수 있습니다.
 
-Example:
-    윈도우를 선택하면 윈도우의 스크린샷을 라벨에 표시하는
-    스크립트.
-
-.. code-block:: python
-
-    import autowinpy as awp
-    import tkinter as tk
-
-    def select_gui():
-        # 윈도우 선택시 실행할 함수
-        global combo, label
-        window: awp.Gui = combo.window
-        im_ar = window.screen_array
-        dsize = int(im_ar.shape[1] * 0.5), int(im_ar.shape[0] * 0.5)
-        im_tk = awp.tk.tk_image(im_ar, dsize)
-        label.configure(image=im_tk)
-        label.image = im_tk
-        print("윈도우 선택: {}".format(window))
-        return
-
-    app = tk.Tk()
-    combo = awp.tk.tkWindowCombo(app)
-    combo.bind_select(select_gui)
-    label = tk.Label(app, text="screen")
-    label.pack()
-    combo.pack()
-    app.mainloop()
-.. code-block
-
-
-Example:
-    윈도우 선택 후, 컨트롤을 선택하면 컨트롤의 스크린샷을 라벨에 전달.
-
-.. code-block:: python
-
-    import autowinpy as awp
-    import tkinter as tk
-
-    def select_gui():
-        # 윈도우 선택시 실행할 함수
-        global combo_sub, label
-        window: awp.Gui = combo_sub.window
-        im_ar = window.screen_array
-        dsize = int(im_ar.shape[1] * 0.5), int(im_ar.shape[0] * 0.5)
-        im_tk = awp.tk.tk_image(im_ar, dsize)
-        label.configure(image=im_tk)
-        label.image = im_tk
-        print("윈도우 선택: {}".format(window))
-        return
-
-    app = tk.Tk()
-    combo_win = awp.tk.tkWindowCombo(app)
-    combo_sub = awp.tk.tkChildCombo(app, combo_win)
-    combo_sub.bind_select(select_gui)
-    label = tk.Label(app, text="screen")
-    label.pack()
-    combo_win.pack()
-    combo_sub.pack()
-    app.mainloop()
-.. code-block
-
 """
 from . import _win32
 

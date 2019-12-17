@@ -13,8 +13,8 @@ with open('readme.md', encoding='utf8') as f:
 setup(
     name             = "autowinpy",
     # FIXME: Synchronization Package Version / Download url Version
-    download_url     = 'https://github.com/soma0sd/autowinpy/archive/0.3.0.tar.gz',
-    version          = '0.3.0',
+    download_url     = 'https://github.com/soma0sd/autowinpy/archive/0.3.1.tar.gz',
+    version          = '0.3.1',
     packages         = find_packages(exclude = ['docs', '.vscode']),
     description      = 'Foreground automation support for Windows OS',
     long_description = description,

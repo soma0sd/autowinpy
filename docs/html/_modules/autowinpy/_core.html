@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ko">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script data-ad-client="ca-pub-3097185090136067" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51378514-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-51378514-7');
+  </script>
+  
+  <title>autowinpy._core &mdash; autowinpy 0.3.1 문서</title>
+  
+
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  
+
+  
+  <link rel="index" title="색인" href="../../genindex.html" />
+  <link rel="search" title="검색" href="../../search.html" />
+  <link rel="top" title="autowinpy 0.3.1 문서" href="../../index.html" />
+  <link rel="up" title="모듈 코드" href="../index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> autowinpy
+              
+
+              
+            </a>
+
+            
+            
+            
+            
+
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+          
+          
+          <p class="caption"><span class="caption-text">문서 목록:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">패키지 살펴보기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide_handle.html">핸들 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference.html">패키지 레퍼런스</a></li>
+</ul>
+
+          
+          
+        </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- autowinpy-sidebar -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+          data-ad-slot="2945824786" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">autowinpy</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">모듈 코드</a> &raquo;</li>
+        
+      <li>autowinpy._core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- autowinpy-topview -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                data-ad-slot="3835739788" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              
+  <h1>autowinpy._core의 소스 코드</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">AutoWinPy::CORE</span>
+<span class="sd">===============</span>
+
+<span class="sd">* 패키지 초기화</span>
+<span class="sd">* 기본 함수</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_win32</span>
+<span class="kn">from</span> <span class="nn">._classes</span> <span class="kn">import</span> <span class="n">Gui</span>
+<span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">windll</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">_set_windows_dpi</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;[private] windows 8.1 이상을 위한 DPI 조정.</span>
+
+<span class="sd">  Return:</span>
+<span class="sd">    (float) DPI 배율</span>
+
+<span class="sd">  프로세스 환경이 HIDPI 모드로 변경됩니다.</span>
+<span class="sd">  이 작업은 좌표 기반의 윈도우 핸들링을 위해</span>
+<span class="sd">  반드시 필요합니다.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">user32</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">user32</span>
+
+  <span class="n">native</span> <span class="o">=</span> <span class="n">user32</span><span class="o">.</span><span class="n">GetDpiForSystem</span><span class="p">()</span>
+  <span class="n">user32</span><span class="o">.</span><span class="n">SetProcessDPIAware</span><span class="p">()</span>
+  <span class="n">scaled</span> <span class="o">=</span> <span class="n">user32</span><span class="o">.</span><span class="n">GetDpiForSystem</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">scaled</span> <span class="o">/</span> <span class="n">native</span>
+
+<div class="viewcode-block" id="window_list"><a class="viewcode-back" href="../../functions.html#autowinpy.window_list">[문서]</a><span class="k">def</span> <span class="nf">window_list</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;autowinpy.Gui&quot;</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;윈도우 목록 출력</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    ([:class:`autowinpy.Gui`]) 현재 제어가능한 창 목록</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">guis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Gui</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Gui</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">_win32</span><span class="o">.</span><span class="n">get_windows</span><span class="p">()]</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">gui</span> <span class="k">for</span> <span class="n">gui</span> <span class="ow">in</span> <span class="n">guis</span> <span class="k">if</span> <span class="n">gui</span><span class="o">.</span><span class="n">is_active</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="find_window"><a class="viewcode-back" href="../../functions.html#autowinpy.find_window">[문서]</a><span class="k">def</span> <span class="nf">find_window</span><span class="p">(</span><span class="n">name_re</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;autowinpy.Gui&quot;</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;정규표현식으로 윈도우를 찾습니다.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    ([:class:`autowinpy.Gui`]) 일치하는 이름을 가진</span>
+<span class="sd">    윈도우 목록</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">_rex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">name_re</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">win</span> <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="n">window_list</span><span class="p">()</span> <span class="k">if</span> <span class="n">_rex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">win</span><span class="o">.</span><span class="n">name</span><span class="p">)]</span></div>
+</pre></div>
+
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- autowinpy-bottom -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                data-ad-slot="8681367191" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, soma0sd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: '../../',
+      VERSION: '0.3.1',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt'
+        };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/underscore.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/language_data.js"></script>
+  <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.StickyNav.enable();
+    });
+  </script>
+   
+
+</body>
+
+</html>

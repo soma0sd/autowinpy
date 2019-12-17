@@ -8,7 +8,7 @@ tkinter 지원
 tk 함수
 --------
 
-.. autofunction:: tk_image
+.. autofunction:: autowinpy.tk.tk_image
 
 
 tkWindowCombo 클래스

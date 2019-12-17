@@ -22,7 +22,7 @@
     gtag('config', 'UA-51378514-7');
   </script>
   
-  <title>tkinter 지원 &mdash; autowinpy 0.3.0 문서</title>
+  <title>tkinter 지원 &mdash; autowinpy 0.3.1 문서</title>
   
 
   
@@ -48,7 +48,7 @@
   
   <link rel="index" title="색인" href="genindex.html" />
   <link rel="search" title="검색" href="search.html" />
-  <link rel="top" title="autowinpy 0.3.0 문서" href="index.html" />
+  <link rel="top" title="autowinpy 0.3.1 문서" href="index.html" />
   <link rel="up" title="패키지 레퍼런스" href="reference.html" />
   <link rel="prev" title="이미지 제어 모듈" href="mod_cv.html" /> 
 
@@ -99,7 +99,9 @@
           <p class="caption"><span class="caption-text">문서 목록:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">패키지 살펴보기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_handle.html">핸들 다루기</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">패키지 레퍼런스</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="functions.html">기본 함수</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cls_Gui.html">GUI 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cls_Template.html">탬플릿 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_win32.html">win32 모듈</a></li>
@@ -195,72 +197,18 @@
 <span id="tkinter"></span><span id="autowinpy-tk"></span><h1>tkinter 지원<a class="headerlink" href="#module-autowinpy.tk" title="제목 주소">¶</a></h1>
 <p>내장 GUI 패키지인 Tkinter와 AutoWinPy를 사용하는 경우
 <strong>autowinpy.tk</strong> 모듈의 함수와 클래스를 사용할 수 있습니다.</p>
-<p class="rubric">예제</p>
-<p>윈도우를 선택하면 윈도우의 스크린샷을 라벨에 표시하는
-스크립트.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
-<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
-
-<span class="k">def</span> <span class="nf">select_gui</span><span class="p">():</span>
-    <span class="c1"># 윈도우 선택시 실행할 함수</span>
-    <span class="k">global</span> <span class="n">combo</span><span class="p">,</span> <span class="n">label</span>
-    <span class="n">window</span><span class="p">:</span> <span class="n">awp</span><span class="o">.</span><span class="n">Gui</span> <span class="o">=</span> <span class="n">combo</span><span class="o">.</span><span class="n">window</span>
-    <span class="n">im_ar</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">screen_array</span>
-    <span class="n">dsize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">im_tk</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tk_image</span><span class="p">(</span><span class="n">im_ar</span><span class="p">,</span> <span class="n">dsize</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im_tk</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">im_tk</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;윈도우 선택: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window</span><span class="p">))</span>
-    <span class="k">return</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-<span class="n">combo</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkWindowCombo</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="n">combo</span><span class="o">.</span><span class="n">bind_select</span><span class="p">(</span><span class="n">select_gui</span><span class="p">)</span>
-<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">)</span>
-<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">combo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-</div>
-<p class="rubric">예제</p>
-<p>윈도우 선택 후, 컨트롤을 선택하면 컨트롤의 스크린샷을 라벨에 전달.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autowinpy</span> <span class="k">as</span> <span class="nn">awp</span>
-<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
-
-<span class="k">def</span> <span class="nf">select_gui</span><span class="p">():</span>
-    <span class="c1"># 윈도우 선택시 실행할 함수</span>
-    <span class="k">global</span> <span class="n">combo_sub</span><span class="p">,</span> <span class="n">label</span>
-    <span class="n">window</span><span class="p">:</span> <span class="n">awp</span><span class="o">.</span><span class="n">Gui</span> <span class="o">=</span> <span class="n">combo_sub</span><span class="o">.</span><span class="n">window</span>
-    <span class="n">im_ar</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">screen_array</span>
-    <span class="n">dsize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">im_ar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">im_tk</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tk_image</span><span class="p">(</span><span class="n">im_ar</span><span class="p">,</span> <span class="n">dsize</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im_tk</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">im_tk</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;윈도우 선택: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window</span><span class="p">))</span>
-    <span class="k">return</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-<span class="n">combo_win</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkWindowCombo</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="n">combo_sub</span> <span class="o">=</span> <span class="n">awp</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="n">tkChildCombo</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">combo_win</span><span class="p">)</span>
-<span class="n">combo_sub</span><span class="o">.</span><span class="n">bind_select</span><span class="p">(</span><span class="n">select_gui</span><span class="p">)</span>
-<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">)</span>
-<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">combo_win</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">combo_sub</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-</div>
 <div class="section" id="tk">
 <h2>tk 함수<a class="headerlink" href="#tk" title="제목 주소">¶</a></h2>
 <dl class="function">
 <dt id="autowinpy.tk.tk_image">
-<code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tk_image</code><span class="sig-paren">(</span><em class="sig-param">image: numpy.ndarray</em>, <em class="sig-param">dsize: Tuple[int</em>, <em class="sig-param">int] = None</em><span class="sig-paren">)</span> &#x2192; PIL.ImageTk<a class="headerlink" href="#autowinpy.tk.tk_image" title="정의 주소">¶</a></dt>
+<code class="sig-prename descclassname">autowinpy.tk.</code><code class="sig-name descname">tk_image</code><span class="sig-paren">(</span><em class="sig-param">image: numpy.ndarray</em>, <em class="sig-param">dsize: Tuple[int</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">mode='fit'</em><span class="sig-paren">)</span> &#x2192; PIL.ImageTk<a class="headerlink" href="#autowinpy.tk.tk_image" title="정의 주소">¶</a></dt>
 <dd><p>OpenCV 이미지를 Tk 이미지로 변환.</p>
 <dl class="field-list simple">
 <dt class="field-odd">매개변수</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image</strong> (<cite>opencv.mat</cite>) – OpenCV용 이미지요소.</p></li>
 <li><p><strong>dsize</strong> (<cite>(width, height)</cite>) – [옵션] 변환할 사이즈.</p></li>
+<li><p><strong>mode</strong> – [옵션] dsize를 지정한 경우, 채우기 모드를 선택합니다.            <cite>《fill》</cite> 은 dsize를 가득 채웁니다.            <cite>《fit》</cite> 은 원본의 가로세로 비율을 유지한 상태로 dsize를 채웁니다.</p></li>
 </ul>
 </dd>
 <dt class="field-even">반환값</dt>
@@ -382,7 +330,8 @@
 <dl class="method">
 <dt id="autowinpy.tk.tkChildCombo.window">
 <em class="property">property </em><code class="sig-name descname">window</code><a class="headerlink" href="#autowinpy.tk.tkChildCombo.window" title="정의 주소">¶</a></dt>
-<dd><p>현재 선택한 윈도우를 출력합니다.</p>
+<dd><p>현재 선택한 윈도우를 출력합니다.
+윈도우를 선택하지 않은 경우, None을 반환합니다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">반환값</dt>
 <dd class="field-odd"><p>(<a class="reference internal" href="cls_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">autowinpy.Gui</span></code></a>) 선택중인 Gui</p>
@@ -452,7 +401,7 @@
   <script type="text/javascript">
     var DOCUMENTATION_OPTIONS = {
       URL_ROOT: './',
-      VERSION: '0.3.0',
+      VERSION: '0.3.1',
       COLLAPSE_INDEX: false,
       FILE_SUFFIX: '.html',
       HAS_SOURCE: true,
