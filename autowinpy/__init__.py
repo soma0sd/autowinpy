@@ -13,7 +13,7 @@ from ._core import (
     find_window
 )
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 if _sys.getwindowsversion().major > 8:
     __dpi_scale_factor__ = _set_windows_dpi()

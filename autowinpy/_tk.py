@@ -81,12 +81,15 @@ except ImportError:
 
 
 
-def tk_image(image: numpy.ndarray, dsize: Tuple[int, int]=None) -> 'PIL.ImageTk':
+def tk_image(image: numpy.ndarray, dsize: Tuple[int, int]=None, mode="fit") -> 'PIL.ImageTk':
     """OpenCV 이미지를 Tk 이미지로 변환.
 
     Args:
         image (`opencv.mat`): OpenCV용 이미지요소.
         dsize (`(width, height)`): [옵션] 변환할 사이즈.
+        mode: [옵션] dsize를 지정한 경우, 채우기 모드를 선택합니다.\
+            `"fill"` 은 dsize를 가득 채웁니다.\
+            `"fit"` 은 원본의 가로세로 비율을 유지한 상태로 dsize를 채웁니다.
 
     Return:
         (`ImageTK`) tkinter 위젯에 사용할 수 있는 이미지 요소.
@@ -101,6 +104,16 @@ def tk_image(image: numpy.ndarray, dsize: Tuple[int, int]=None) -> 'PIL.ImageTk'
     """
     cv_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     if not dsize is None:
+        if mode == "fit":
+            # width / height
+            img_r = cv_img.shape[1] / cv_img.shape[0]
+            dsi_r = dsize[0] / dsize[1]
+            if img_r < dsi_r:
+                dsize = int(dsize[1]*img_r), dsize[1]
+            else:
+                dsize = dsize[0], int(dsize[0]/img_r)
+        elif mode == "fill":
+            pass
         if dsize[0] * dsize[1] < cv_img.shape[0] * cv_img.shape[1]:
             method = cv2.INTER_AREA
         else:
@@ -235,17 +248,22 @@ class tkChildCombo(ttk.Combobox):
     def _window_combo_select(self):
         self._windows = self._win_combo.window.childs
         self['values'] = self._windows
+        self.set('')
         return
 
     @property
     def window(self) -> Gui:
         """현재 선택한 윈도우를 출력합니다.
+        윈도우를 선택하지 않은 경우, None을 반환합니다.
 
         Return:
             (:class:`autowinpy.Gui`) 선택중인 Gui
         """
-        index = self.current()
-        return self.window_list[index]
+        if self.current() < 0:
+            return None
+        else:
+            index = self.current()
+            return self.window_list[index]
     
     @property
     def window_list(self) -> List[Gui]:
