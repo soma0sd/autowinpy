@@ -20,9 +20,12 @@ GUI 클래스
 .. autoproperty:: autowinpy.Gui.size
 .. autoproperty:: autowinpy.Gui.screen_array
 
-판단 및 관계
+Boolean
 ------------
 .. autoproperty:: autowinpy.Gui.is_active
 .. autoproperty:: autowinpy.Gui.is_child
+
+부모 & 자식 
+-----------
 .. autoproperty:: autowinpy.Gui.parent
 .. autoproperty:: autowinpy.Gui.childs

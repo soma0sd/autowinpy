@@ -22,7 +22,7 @@
     gtag('config', 'UA-51378514-7');
   </script>
   
-  <title>AutoWinPy 사용자매뉴얼 &mdash; autowinpy 0.2.0 문서</title>
+  <title>AutoWinPy 사용자매뉴얼 &mdash; autowinpy 0.3.0 문서</title>
   
 
   
@@ -48,7 +48,7 @@
   
   <link rel="index" title="색인" href="genindex.html" />
   <link rel="search" title="검색" href="search.html" />
-  <link rel="top" title="autowinpy 0.2.0 문서" href="#" />
+  <link rel="top" title="autowinpy 0.3.0 문서" href="#" />
   <link rel="next" title="패키지 살펴보기" href="overview.html" /> 
 
   
@@ -168,15 +168,7 @@
 <img alt="Release" src="https://img.shields.io/pypi/v/autowinpy?label=Release" />
 <img alt="Windows Version - 10, 8.1, 7" src="https://img.shields.io/badge/Windows-10%20%7C%208.1%20%7C%207-brightgreen" />
 <img alt="Python Version" src="https://img.shields.io/pypi/pyversions/autowinpy" />
-<p>AutoWinPy는 윈도우 OS의 윈도우를 제어합니다.</p>
-<div class="section" id="id1">
-<h2>주요 기능<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
-<ul class="simple">
-<li><p>활성/비활성 윈도우의 상태를 제어합니다.</p></li>
-<li><p>활성/비활성 윈도우의 상태를 출력합니다.</p></li>
-<li><p>활성/비활성 윈도우의 스크린샷을 가져옵니다.</p></li>
-<li><p>활성/비활성 윈도우에 클릭이나 키 입력 등의 명령을 보냅니다.</p></li>
-</ul>
+<p>현재 패키지 구성이 끝나지 않아 처음 사용자를 위한 가이드가 없습니다.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">문서 목록:</span></p>
 <ul>
@@ -191,9 +183,8 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>종속성<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<div class="section" id="id1">
+<h2>종속성<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/mhammond/pywin32">pywin32</a></p></li>
 <li><p><a class="reference external" href="https://opencv.org/">OpenCV</a></p></li>
@@ -211,8 +202,8 @@
 윈도우 캡쳐나 OpenCV연산 결과를 GUI에 표시하기 위한 함수에
 쓰입니다.</p>
 </div>
-<div class="section" id="id3">
-<h2>알려진 문제<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<div class="section" id="id2">
+<h2>알려진 문제<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
 <p><strong>Windows 8.1 이상의 HIDPI 지원</strong></p>
 <p>Windows 8.1이상에서 패키지를 사용하면 초기화 도중 프로세스를
 HIDPI지원 상태로 바꿉니다. 이것으로 인해 자동화 프로그램을 GUI로
@@ -228,19 +219,22 @@ HIDPI지원 상태로 바꿉니다. 이것으로 인해 자동화 프로그램�
 작업 중 생기는 일이므로 임의로 HIDPI지원을 끈다면 패키지가
 정상적으로 동작하지 않습니다.</p>
 </div>
-<div class="section" id="id4">
-<h2>업데이트<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<div class="section" id="id3">
+<h2>업데이트<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
 <ul class="simple">
-<li><p><strong>0.1.0</strong> : 이제 PyPI를 통해 설치할 수 있습니다.</p></li>
+<li><p><strong>0.3.0</strong> : Template 클래스 추가: 이미지 서칭 지원</p></li>
 <li><p><strong>0.2.0</strong> : Tkinter GUI 지원기능 추가</p></li>
 <li><p><strong>0.2.0</strong> : 클래스 이름 변경: <cite>autowinpy.UI</cite> -&gt; <cite>autowinpy.Gui</cite></p></li>
 <li><p><strong>0.2.0</strong> : (Fix) 윈도우 네이티브 앱 캡쳐시 검은 화면만 나오는 문제</p></li>
+<li><p><strong>0.1.0</strong> : 이제 PyPI를 통해 설치할 수 있습니다.</p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>추가할 기능<a class="headerlink" href="#id5" title="제목 주소">¶</a></h2>
+<div class="section" id="id4">
+<h2>추가할 기능<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
 <ul class="simple">
-<li><p><strong>0.3.0</strong>:</p></li>
+<li><p>Gui 클래스에 명령 전송 기능 추가</p></li>
+<li><p>Template 클래스의 템플릿 이미지 크기 자동 맞춤 기능</p></li>
+<li><p>매크로 시나리오 관리와 시간 예약 기능</p></li>
 </ul>
 </div>
 </div>
@@ -284,7 +278,7 @@ HIDPI지원 상태로 바꿉니다. 이것으로 인해 자동화 프로그램�
   <script type="text/javascript">
     var DOCUMENTATION_OPTIONS = {
       URL_ROOT: './',
-      VERSION: '0.2.0',
+      VERSION: '0.3.0',
       COLLAPSE_INDEX: false,
       FILE_SUFFIX: '.html',
       HAS_SOURCE: true,

@@ -22,7 +22,7 @@
     gtag('config', 'UA-51378514-7');
   </script>
   
-  <title>탬플릿 클래스 &mdash; autowinpy 0.2.0 문서</title>
+  <title>탬플릿 클래스 &mdash; autowinpy 0.3.0 문서</title>
   
 
   
@@ -48,7 +48,7 @@
   
   <link rel="index" title="색인" href="genindex.html" />
   <link rel="search" title="검색" href="search.html" />
-  <link rel="top" title="autowinpy 0.2.0 문서" href="index.html" />
+  <link rel="top" title="autowinpy 0.3.0 문서" href="index.html" />
   <link rel="up" title="패키지 레퍼런스" href="reference.html" />
   <link rel="next" title="win32 모듈" href="mod_win32.html" />
   <link rel="prev" title="GUI 클래스" href="cls_Gui.html" /> 
@@ -102,7 +102,12 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">패키지 살펴보기</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">패키지 레퍼런스</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cls_Gui.html">GUI 클래스</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">탬플릿 클래스</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">탬플릿 클래스</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">정의</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">탬플릿 정보</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">이미지 서치</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mod_win32.html">win32 모듈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_cv.html">이미지 제어 모듈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_tk.html">tkinter 지원</a></li>
@@ -175,6 +180,72 @@
               
   <div class="section" id="autowinpy-template">
 <span id="id1"></span><h1>탬플릿 클래스<a class="headerlink" href="#autowinpy-template" title="제목 주소">¶</a></h1>
+<div class="section" id="id2">
+<h2>정의<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<dl class="class">
+<dt id="autowinpy.Template">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">Template</code><span class="sig-paren">(</span><em class="sig-param">path: str = None</em>, <em class="sig-param">**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/autowinpy/_classes.html#Template"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#autowinpy.Template" title="정의 주소">¶</a></dt>
+<dd><p>템플릿 클래스.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<cite>str</cite>) – 템플릿 파일의 경로</p></li>
+<li><p><strong>args</strong> (<cite>key=value</cite>) – 템플릿 속성</p></li>
+</ul>
+</dd>
+</dl>
+<p>탬플릿(Template)은 조각그림을 담고 있는 클래스입니다.</p>
+<p><strong>args</strong></p>
+<ul class="simple">
+<li><p>《use_mask》 (<cite>Bool</cite>: <cite>True</cite>): 해당 탬플릿에 마스크를 사용할지        결정합니다.</p></li>
+<li><p>《matched_width》, 《matched_height》 (<cite>int</cite>: <cite>None</cite>): 탬플릿의        매칭 너비나 높이를 지정하면 원본 크기가 아닌 지정한 크기로        이미지 서칭을 수행합니다. 둘 중 하나만 지정해도 자동으로 비율에        맞게 확대/축소됩니다.</p></li>
+<li><p>《threshold》 (<cite>float</cite>: <cite>0.8</cite>): 템플릿 유무를 판단할 문턱값입니다.        낮을수록 정확도가 떨어집니다.</p></li>
+<li><p>《screen_area》 (<cite>[int, int, int, int]</cite>: <cite>[0, 0, 100, 100]</cite>):        스크린에서 매칭할 영역을 %값으로 지정합니다.</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>탬플릿 정보<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<dl class="method">
+<dt id="autowinpy.Template.configure">
+<em class="property">property </em><code class="sig-prename descclassname">Template.</code><code class="sig-name descname">configure</code><a class="headerlink" href="#autowinpy.Template.configure" title="정의 주소">¶</a></dt>
+<dd><p>(<cite>Dict</cite>)현재 설정을 반환합니다.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>이미지 서치<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<dl class="function">
+<dt id="autowinpy.Template.image_search">
+<code class="sig-prename descclassname">autowinpy.Template.</code><code class="sig-name descname">image_search</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">screen: numpy.ndarray</em>, <em class="sig-param">mode='pos'</em>, <em class="sig-param">**options</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.Template.image_search" title="정의 주소">¶</a></dt>
+<dd><p>스크린에 템플릿이 있는지 확인합니다.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>screen</strong> (<cite>opencv.mat</cite>) – 이미지를 찾을 이미지 행렬입니다.</p></li>
+<li><p><strong>mode</strong><strong>(</strong><strong>기본값</strong> – 《pos》): 출력 정보를 결정합니다.
+여러 속성을 함꺼번에 줄 수 있습니다.</p></li>
+<li><p><strong>options</strong> (<cite>key=value</cite>) – 이번 매칭 한정으로 탬플릿 속성을 변경하고자                할 때 사용합니다. 가능한 옵션: use_mask, matched_width, matched_height,                threshold, screen_area</p></li>
+</ul>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p><p>다중출력시 아래의 순서대로 출력합니다.</p>
+<ul class="simple">
+<li><p>[mode: 《exist》]: 이미지가 존재하는지 확인합니다.                매칭값이 문턱값(threshold)을 넘는 경우 True를 반환합니다.</p></li>
+<li><p>[mode: 《pos》]: 찾아낸 이미지의 상대적인 위치를 출력합니다.                <cite>(x0, y0), (x1, y1)</cite> 형태로 출력하며 각각 왼쪽 상단 모서리와                 오른쪽 하단 모서리의 좌표입니다.</p></li>
+<li><p>[mode: 《rect》]: 찾아낸 영역을 표시한 새로운 screen 요소를                반환합니다.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">mode=&quot;pos&quot;+&quot;exist&quot;</span></code> 나 <code class="docutils literal notranslate"><span class="pre">mode=&quot;rect&quot;+&quot;exist&quot;</span></code> 와 같은 혼합속성도
+가능합니다. 단, 출력하는 순서는 입력한 모드의 순서가 아닌 위의 목록 순서를
+따릅니다. 가령 <code class="docutils literal notranslate"><span class="pre">mode=&quot;pos&quot;+&quot;exist&quot;</span></code> 을 매개변수로 하더라도 출력 결과는
+<code class="docutils literal notranslate"><span class="pre">True,</span> <span class="pre">(x0,</span> <span class="pre">y0),</span> <span class="pre">(x1,</span> <span class="pre">y1)</span></code> 과 같은 형태가 됩니다.</p>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -218,7 +289,7 @@
   <script type="text/javascript">
     var DOCUMENTATION_OPTIONS = {
       URL_ROOT: './',
-      VERSION: '0.2.0',
+      VERSION: '0.3.0',
       COLLAPSE_INDEX: false,
       FILE_SUFFIX: '.html',
       HAS_SOURCE: true,

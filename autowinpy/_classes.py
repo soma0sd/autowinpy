@@ -208,9 +208,16 @@ class Template(object):
             * [mode: "exist"]: 이미지가 존재하는지 확인합니다.\
                 매칭값이 문턱값(threshold)을 넘는 경우 True를 반환합니다.
             * [mode: "pos"]: 찾아낸 이미지의 상대적인 위치를 출력합니다.\
-                ((x0, y0), (x1, y1))형태로 출력하며 각각 왼쪽 상단 모서리와 \
+                `(x0, y0), (x1, y1)` 형태로 출력하며 각각 왼쪽 상단 모서리와 \
                 오른쪽 하단 모서리의 좌표입니다.
-            * [mode: "rect"]: 
+            * [mode: "rect"]: 찾아낸 영역을 표시한 새로운 screen 요소를\
+                반환합니다.
+            
+        ``mode="pos"+"exist"`` 나 ``mode="rect"+"exist"`` 와 같은 혼합속성도
+        가능합니다. 단, 출력하는 순서는 입력한 모드의 순서가 아닌 위의 목록 순서를
+        따릅니다. 가령 ``mode="pos"+"exist"`` 을 매개변수로 하더라도 출력 결과는
+        ``True, (x0, y0), (x1, y1)`` 과 같은 형태가 됩니다.
+
         """
         if len(screen.shape) > 2:
             screen_mat = cv2.cvtColor(screen, cv2.COLOR_RGB2GRAY)
