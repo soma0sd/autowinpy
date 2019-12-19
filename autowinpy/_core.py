@@ -46,4 +46,5 @@ def find_window(name_re:str) -> List["autowinpy.Gui"]:
     윈도우 목록
   """
   _rex = re.compile(name_re)
-  return [win for win in window_list() if _rex.match(win.name)]
+  wins = [win for win in window_list() if _rex.search(win.name)]
+  return wins

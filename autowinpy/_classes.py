@@ -120,7 +120,7 @@ class Gui(object):
         """
         handles = _win32.get_child_windows(self.hwnd)
         out: List[Gui] = [Gui(i, self) for i in handles]
-        return [ui for ui in out if ui.is_active]
+        return [ui for ui in out]
 
     @property
     def screen_array(self) -> np.ndarray:

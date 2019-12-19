@@ -2,22 +2,24 @@
 from setuptools import setup, find_packages
 import autowinpy
 
-
+VERSION = autowinpy.__version__
 ## CMD: create wheel
 # python setup.py bdist_wheel
 ## CMD: upload to pypi
 # twine upload dist/{}
-with open('readme.md', encoding='utf8') as f:
-    description = f.read()
+def file(path: str) -> str:
+    with open('readme.md', encoding='utf8') as f:
+        description = f.read()
+    return description
 
 setup(
     name             = "autowinpy",
     # FIXME: Synchronization Package Version / Download url Version
-    download_url     = 'https://github.com/soma0sd/autowinpy/archive/0.3.1.tar.gz',
-    version          = '0.3.1',
-    packages         = find_packages(exclude = ['docs', '.vscode']),
+    download_url     = 'https://github.com/soma0sd/autowinpy/archive/{}.tar.gz'.format(VERSION),
+    version          = VERSION,
+    packages         = find_packages(exclude=['docs', '.vscode', 'tutorial']),
     description      = 'Foreground automation support for Windows OS',
-    long_description = description,
+    long_description = file('readme.md'),
     long_description_content_type='text/markdown',
     author           = 'soma0sd',
     author_email     = 'soma0sd@gmail.com',
@@ -29,12 +31,14 @@ setup(
         "Pillow"
     ],
     keywords         = ['windows', 'automation', 'macro'],
-    python_requires  = '>=3',
+    python_requires  = '>=3.4',
     package_data     =  {},
-    zip_safe         = False,
-    license          = 'MIT',
+    license          = file('LICENSE'),
     classifiers      = [
+        'Natural Language :: Korean',
+        'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
