@@ -1,21 +1,18 @@
 """
 AutoWinPy
-=========
+==========
 
 """
-import sys as _sys
-from . import _win32 as win32
-from . import _tk as tk
-from ._classes import Gui, Template
-from ._core import (
-    _set_windows_dpi,
-    window_list,
-    find_window
-)
+from . import win32
+from . import type
+from . import core
+from .core import *
+from .win32 import *
+from .type import *
 
-__version__ = "0.3.2"
 
-if _sys.getwindowsversion().major > 8:
-    __dpi_scale_factor__ = _set_windows_dpi()
-else:
-    __dpi_scale_factor__ = 1
+__version__ = "0.4.0"
+"""패키지 버전"""
+
+__dpi_scale_factor__ = core._set_windows_dpi()
+"""HIDPI 배율"""
