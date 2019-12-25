@@ -1,16 +1,18 @@
-test.py
+test*.*
 test/
 
-# Document resource
-_themes/
-doctrees/
+#python
+__pycache__/
 
-doc.bat
+# Sphinx
+build/
+source/
+doctrees/
 Makefile
 make.bat
+make.b.bat
 
 # build
-build/
 dist/
 .vscode/
 *.egg-info/
