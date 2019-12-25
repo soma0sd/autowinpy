@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ko">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>패키지 내부 타입 &mdash; AutoWinPy 0.4.0 문서</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../"
+    src="../_static/documentation_options.js"></script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/underscore.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/language_data.js"></script>
+  <script type="text/javascript" src="../_static/translations.js"></script>
+  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="index" title="색인" href="../genindex.html" />
+  <link rel="search" title="검색" href="../search.html" />
+  <link rel="next" title="패키지 내부 함수" href="m_inner.html" />
+  <link rel="prev" title="win32 모듈" href="m_win32.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AutoWinPy
+              
+
+              
+            </a>
+
+            
+            
+            
+            
+
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+          
+          
+          
+          
+          
+          <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">레퍼런스</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#autowinpy">AutoWinPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_Gui.html">Gui 클래스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_Template.html">템플릿 클래스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m_win32.html">win32 모듈</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">패키지 내부 타입</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">사각형 영역</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">이미지</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="m_inner.html">패키지 내부 함수</a></li>
+</ul>
+</li>
+</ul>
+
+          
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AutoWinPy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+          <div class="rst-content">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">레퍼런스</a> &raquo;</li>
+        
+      <li>패키지 내부 타입</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/c_types.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <div itemprop="articleBody">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- autowinpy-topview -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                  data-ad-slot="3835739788" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                
+  <div class="section" id="id1">
+<h1>패키지 내부 타입<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<div class="section" id="id2">
+<h2>사각형 영역<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<dl class="class">
+<dt id="autowinpy.type.Rect">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.type.</code><code class="sig-name descname">Rect</code><span class="sig-paren">(</span><em class="sig-param">left=0</em>, <em class="sig-param">top=0</em>, <em class="sig-param">right=0</em>, <em class="sig-param">bottom=0</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.type.Rect" title="정의 주소">¶</a></dt>
+<dd><p>사각영역</p>
+<dl class="method">
+<dt id="autowinpy.type.Rect.bottom">
+<em class="property">property </em><code class="sig-name descname">bottom</code><a class="headerlink" href="#autowinpy.type.Rect.bottom" title="정의 주소">¶</a></dt>
+<dd><p>하단 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.end">
+<em class="property">property </em><code class="sig-name descname">end</code><a class="headerlink" href="#autowinpy.type.Rect.end" title="정의 주소">¶</a></dt>
+<dd><p>끝 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.height">
+<em class="property">property </em><code class="sig-name descname">height</code><a class="headerlink" href="#autowinpy.type.Rect.height" title="정의 주소">¶</a></dt>
+<dd><p>높이</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.left">
+<em class="property">property </em><code class="sig-name descname">left</code><a class="headerlink" href="#autowinpy.type.Rect.left" title="정의 주소">¶</a></dt>
+<dd><p>왼쪽 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.right">
+<em class="property">property </em><code class="sig-name descname">right</code><a class="headerlink" href="#autowinpy.type.Rect.right" title="정의 주소">¶</a></dt>
+<dd><p>오른쪽 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#autowinpy.type.Rect.size" title="정의 주소">¶</a></dt>
+<dd><p>너비와 높이 출력</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.start">
+<em class="property">property </em><code class="sig-name descname">start</code><a class="headerlink" href="#autowinpy.type.Rect.start" title="정의 주소">¶</a></dt>
+<dd><p>시작 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.top">
+<em class="property">property </em><code class="sig-name descname">top</code><a class="headerlink" href="#autowinpy.type.Rect.top" title="정의 주소">¶</a></dt>
+<dd><p>상단 좌표</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.width">
+<em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#autowinpy.type.Rect.width" title="정의 주소">¶</a></dt>
+<dd><p>너비</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.xywh">
+<code class="sig-name descname">xywh</code><span class="sig-paren">(</span><em class="sig-param">left: int</em>, <em class="sig-param">top: int</em>, <em class="sig-param">width: int</em>, <em class="sig-param">height: int</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.type.Rect.xywh" title="정의 주소">¶</a></dt>
+<dd><p>시작 좌표와 너비, 높이로 재정의합니다.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Rect.xyxy">
+<code class="sig-name descname">xyxy</code><span class="sig-paren">(</span><em class="sig-param">left: int</em>, <em class="sig-param">top: int</em>, <em class="sig-param">right: int</em>, <em class="sig-param">bottom: int</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.type.Rect.xyxy" title="정의 주소">¶</a></dt>
+<dd><p>좌, 상, 우, 하 수치를 기준으로 재정의합니다.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>이미지<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<dl class="class">
+<dt id="autowinpy.type.Image">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.type.</code><code class="sig-name descname">Image</code><a class="headerlink" href="#autowinpy.type.Image" title="정의 주소">¶</a></dt>
+<dd><p>AutoWinPy의 이미지 클래스</p>
+<p>NumPy의 ndarray를 상속합니다.</p>
+<dl class="method">
+<dt id="autowinpy.type.Image.channel">
+<code class="sig-name descname">channel</code><span class="sig-paren">(</span><em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; autowinpy.type.Image<a class="headerlink" href="#autowinpy.type.Image.channel" title="정의 주소">¶</a></dt>
+<dd><p>단일채널 이미지 출력</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>n</strong> – 채널은 0부터 시작합니다.
+sRGB의 경우 투명도 채널은 3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Image.grayscale">
+<em class="property">property </em><code class="sig-name descname">grayscale</code><a class="headerlink" href="#autowinpy.type.Image.grayscale" title="정의 주소">¶</a></dt>
+<dd><p>회색조 이미지를 출력합니다.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Image.height">
+<em class="property">property </em><code class="sig-name descname">height</code><a class="headerlink" href="#autowinpy.type.Image.height" title="정의 주소">¶</a></dt>
+<dd><p>높이</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Image.len_channels">
+<em class="property">property </em><code class="sig-name descname">len_channels</code><a class="headerlink" href="#autowinpy.type.Image.len_channels" title="정의 주소">¶</a></dt>
+<dd><p>이미지 채널 수</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">0</span></code> 회색조,
+<code class="docutils literal notranslate"><span class="pre">3</span></code> RGB or BGR,
+<code class="docutils literal notranslate"><span class="pre">4</span></code> sRGB</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Image.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">width: int = None</em>, <em class="sig-param">height: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.type.Image.size" title="정의 주소">¶</a></dt>
+<dd><p>너비, 높이 변경 및 출력</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – 변경할 너비</p></li>
+<li><p><strong>height</strong> – 변경할 높이</p></li>
+</ul>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Image</span></code> 높이나 너비를 설정하면 비율은 유지한 채로 이미지의
+크기를 변경. 둘 다 설정하면 사이즈를 변경한 복제
+이미지를 출력.
+<code class="docutils literal notranslate"><span class="pre">(int,</span> <span class="pre">int)</span></code> 비어있는 경우 현재의 너비와 높이를 출력</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="autowinpy.type.Image.width">
+<em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#autowinpy.type.Image.width" title="정의 주소">¶</a></dt>
+<dd><p>너비</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+                <!-- autowinpy-bottom -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                  data-ad-slot="8681367191" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="m_inner.html" class="btn btn-neutral float-right" title="패키지 내부 함수" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="m_win32.html" class="btn btn-neutral float-left" title="win32 모듈" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, soma0sd
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+          </div>
+        </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+  
+   
+
+</body>
+
+</html>

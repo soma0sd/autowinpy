@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ko" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ko">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>win32 모듈 &mdash; AutoWinPy 0.4.0 문서</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../"
+    src="../_static/documentation_options.js"></script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/underscore.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/language_data.js"></script>
+  <script type="text/javascript" src="../_static/translations.js"></script>
+  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="index" title="색인" href="../genindex.html" />
+  <link rel="search" title="검색" href="../search.html" />
+  <link rel="next" title="패키지 내부 타입" href="c_types.html" />
+  <link rel="prev" title="템플릿 클래스" href="c_Template.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AutoWinPy
+              
+
+              
+            </a>
+
+            
+            
+            
+            
+
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+          
+          
+          
+          
+          
+          <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">레퍼런스</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#autowinpy">AutoWinPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_Gui.html">Gui 클래스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_Template.html">템플릿 클래스</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">win32 모듈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_types.html">패키지 내부 타입</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m_inner.html">패키지 내부 함수</a></li>
+</ul>
+</li>
+</ul>
+
+          
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AutoWinPy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+          <div class="rst-content">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">레퍼런스</a> &raquo;</li>
+        
+      <li>win32 모듈</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/m_win32.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <div itemprop="articleBody">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- autowinpy-topview -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                  data-ad-slot="3835739788" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                
+  <div class="section" id="module-autowinpy.win32">
+<span id="win32"></span><h1>win32 모듈<a class="headerlink" href="#module-autowinpy.win32" title="제목 주소">¶</a></h1>
+<p>윈도우 제어 모듈</p>
+<dl class="function">
+<dt id="autowinpy.win32.handle_list">
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">handle_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#autowinpy.win32.handle_list" title="정의 주소">¶</a></dt>
+<dd><p>핸들 리스트 출력</p>
+<dl class="field-list simple">
+<dt class="field-odd">반환값</dt>
+<dd class="field-odd"><p>핸들ID 리스트</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="autowinpy.win32.child_handle_list">
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">child_handle_list</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#autowinpy.win32.child_handle_list" title="정의 주소">¶</a></dt>
+<dd><p>부모 핸들로부터 자식핸들 리스트를 가져옴</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>hwnd</strong> – 부모 윈도우 핸들</p>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p>자식핸들 ID 리스트</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="autowinpy.win32.window_text">
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">window_text</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#autowinpy.win32.window_text" title="정의 주소">¶</a></dt>
+<dd><p>핸들로부터 윈도우 이름을 가져옴</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>hwnd</strong> – 윈도우 핸들</p>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p>윈도우 이름</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="autowinpy.win32.window_rect">
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">window_rect</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; autowinpy.type.Rect<a class="headerlink" href="#autowinpy.win32.window_rect" title="정의 주소">¶</a></dt>
+<dd><p>핸들로부터 윈도우 사각영역 좌표를 가져옴</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>hwnd</strong> – 윈도우 핸들</p>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p><a class="reference internal" href="c_types.html#autowinpy.type.Rect" title="autowinpy.type.Rect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rect</span></code></a> 사각영역 객체</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="autowinpy.win32.window_array">
+<code class="sig-prename descclassname">autowinpy.win32.</code><code class="sig-name descname">window_array</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span> &#x2192; autowinpy.type.Image<a class="headerlink" href="#autowinpy.win32.window_array" title="정의 주소">¶</a></dt>
+<dd><p>윈도우 이미지를 배열 형태로 가져옴</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><p><strong>hwnd</strong> – 윈도우 핸들</p>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p>윈도우 이미지 배열</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+                <!-- autowinpy-bottom -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3097185090136067"
+                  data-ad-slot="8681367191" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_types.html" class="btn btn-neutral float-right" title="패키지 내부 타입" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_Template.html" class="btn btn-neutral float-left" title="템플릿 클래스" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, soma0sd
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+          </div>
+        </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+  
+   
+
+</body>
+
+</html>
