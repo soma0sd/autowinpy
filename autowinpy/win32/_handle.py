@@ -5,7 +5,7 @@ from ctypes import windll
 from typing import List, Tuple
 
 import numpy
-from PIL import Image
+from PIL import Image as pil_Image
 from pythonwin import win32ui
 from win32 import win32gui
 
@@ -38,6 +38,13 @@ def child_handle_list(hwnd: int) -> List[int]:
     out: List[HWND] = []
     win32gui.EnumChildWindows(hwnd, enum, out)
     return out
+
+def is_active_gui(hwnd: int) -> bool:
+    """핸들이 감지할 수 있는 GUI를 가지고 있는지\
+    확인합니다."""
+    WindowEnabled = win32gui.IsWindowEnabled(hwnd)
+    WindowVisible = win32gui.IsWindowVisible(hwnd)
+    return bool(WindowEnabled and WindowVisible)
 
 def window_text(hwnd: int) -> str:
     """핸들로부터 윈도우 이름을 가져옴
@@ -87,7 +94,7 @@ def window_array(hwnd: int) -> Image:
     # formating image
     bitmap_array = numpy.asarray(bitmap.GetBitmapBits(), dtype='uint8')
 
-    bmp_pil = Image.frombuffer(
+    bmp_pil = pil_Image.frombuffer(
         'RGB', (rect.width, rect.height), bitmap_array, 'raw', 'BGRX', 0, 1)
     img = numpy.array(bmp_pil)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)

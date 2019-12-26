@@ -6,6 +6,7 @@ from ._handle import (
     window_text,
     window_rect,
     window_array,
+    is_active_gui,
 )
 
 __all__ = [

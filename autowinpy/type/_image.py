@@ -27,17 +27,17 @@ class Image(numpy.ndarray):
         return n.view(cls)
 
     @property
-    def width(self):
+    def width(self) -> int:
         """너비"""
         return self.shape[1]
     
     @property
-    def height(self):
+    def height(self) -> int:
         """높이"""
         return self.shape[0]
 
     @property
-    def len_channels(self):
+    def len_channels(self) -> int:
         """이미지 채널 수
 
         Returns:
@@ -72,9 +72,9 @@ class Image(numpy.ndarray):
         if width is None and height is None:
             return self.width, self.height
         elif height is None:
-            height = int(width  * _w / _h)
+            height = int(width  * _h / _w)
         elif width is None:
-            width  = int(height * _h / _w)
+            width  = int(height * _w / _h)
         method = cv2.INTER_AREA if _w > width else cv2.INTER_LINEAR
         return Image(cv2.resize(self, (width, height), interpolation=method))
     
@@ -90,3 +90,6 @@ class Image(numpy.ndarray):
                 "{} 채널이 존재하지 않습니다. 이미지 채널 수: {}".format(
                     n, self.len_channels))
         return Image(self[:,:,n])
+
+    def convert(self, mode) -> 'Image':
+        return Image(cv2.cvtColor(self, mode))

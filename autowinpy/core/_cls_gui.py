@@ -24,6 +24,10 @@ class Gui:
         return self.name
 
     @property
+    def _is_active(self) -> bool:
+        return win32.is_active_gui(self.hwnd)
+
+    @property
     def name(self) -> str:
         """(str) 윈도우 이름"""
         return win32.window_text(self.hwnd)
@@ -42,11 +46,12 @@ class Gui:
 
     def childs(self) -> List['autowinpy.Gui']:
         """자식 :class:`Gui` 목록 출력"""
-        return [Gui(h) for h in win32.child_handle_list(self.hwnd)]
+        child_list =  [Gui(h) for h in win32.child_handle_list(self.hwnd)]
+        return [g for g in child_list if g._is_active]
 
     def image_array(self) -> Image:
         """이미지 출력"""
-        return win32.window_array(self.hwnd)
+        return Image(win32.window_array(self.hwnd))
 
 def window_list() -> List[Gui]:
     """활성 윈도우를 Gui 목록으로 출력
@@ -54,7 +59,8 @@ def window_list() -> List[Gui]:
     Return:
         :class:`Gui` 리스트
     """
-    return [Gui(h) for h in win32.handle_list()]
+    win_list: List[Gui] = [Gui(h) for h in win32.handle_list()]
+    return [g for g in win_list if g._is_active]
 
 def find_window(name_re:str) -> List[Gui]:
     """정규표현식으로 윈도우를 찾습니다.
