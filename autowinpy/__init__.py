@@ -6,9 +6,11 @@ AutoWinPy
 from . import win32
 from . import type
 from . import core
+from . import atk
 from .core import *
 from .win32 import *
 from .type import *
+from .atk import *
 
 
 __version__ = "0.4.0"
