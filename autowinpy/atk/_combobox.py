@@ -41,7 +41,7 @@ class GuiSelectCombo(ttk.Combobox):
 
     @property
     def selected(self) -> Gui:
-        """선택한 Gui"""
+        """현재 Gui를 반환"""
         index = self.current()
         if index < 0:
             return None
@@ -49,5 +49,9 @@ class GuiSelectCombo(ttk.Combobox):
             return self._gui_list[index]
 
     def bind_selected(self, func: Callable):
-        """선택 이벤트에 함수 바인딩"""
+        """Gui 선택 이벤트에 함수 바인딩
+
+        Args:
+            func: 함수 객체, 매개변수를 전달하지 않습니다.
+        """
         self.bind("<<ComboboxSelected>>", lambda x: func(), "+")

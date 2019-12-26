@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>레퍼런스 &mdash; AutoWinPy 0.4.1 문서</title>
+  <title>튜토리얼 &mdash; AutoWinPy 0.4.1 문서</title>
   
 
   
@@ -41,8 +41,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="index" title="색인" href="../genindex.html" />
   <link rel="search" title="검색" href="../search.html" />
-  <link rel="next" title="Gui 클래스" href="c_Gui.html" />
-  <link rel="prev" title="윈도우와 컨트롤" href="../tutorial/window_and_child.html" /> 
+  <link rel="next" title="윈도우와 컨트롤" href="window_and_child.html" />
+  <link rel="prev" title="AutoWinPy 사용자 문서" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,17 +87,11 @@
           
           
           <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">튜토리얼</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">레퍼런스</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#autowinpy">AutoWinPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_Gui.html">Gui 클래스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_Template.html">템플릿 클래스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_win32.html">win32 모듈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_atk.html">tkinter 지원 모듈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_types.html">패키지 내부 타입</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_inner.html">패키지 내부 함수</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">튜토리얼</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="window_and_child.html">윈도우와 컨트롤</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">레퍼런스</a></li>
 </ul>
 
           
@@ -143,13 +137,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>레퍼런스</li>
+      <li>튜토리얼</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorial/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,52 +163,12 @@
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 
-  <div class="section" id="module-autowinpy">
-<span id="id1"></span><h1>레퍼런스<a class="headerlink" href="#module-autowinpy" title="제목 주소">¶</a></h1>
-<div class="section" id="autowinpy">
-<h2>AutoWinPy<a class="headerlink" href="#autowinpy" title="제목 주소">¶</a></h2>
-<dl class="data">
-<dt id="autowinpy.__version__">
-<code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">__version__</code><em class="property"> = '0.4.1'</em><a class="headerlink" href="#autowinpy.__version__" title="정의 주소">¶</a></dt>
-<dd><p>패키지 버전</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="autowinpy.__dpi_scale_factor__">
-<code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">__dpi_scale_factor__</code><em class="property"> = 1.25</em><a class="headerlink" href="#autowinpy.__dpi_scale_factor__" title="정의 주소">¶</a></dt>
-<dd><p>HIDPI 배율</p>
-</dd></dl>
-
-</div>
-<dl class="function">
-<dt id="autowinpy.window_list">
-<code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">window_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[autowinpy.Gui]<a class="headerlink" href="#autowinpy.window_list" title="정의 주소">¶</a></dt>
-<dd><p>활성 윈도우를 Gui 목록으로 출력</p>
-<dl class="field-list simple">
-<dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p><a class="reference internal" href="c_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gui</span></code></a> 리스트</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autowinpy.find_window">
-<code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">find_window</code><span class="sig-paren">(</span><em class="sig-param">name_re: str</em><span class="sig-paren">)</span> &#x2192; List[autowinpy.Gui]<a class="headerlink" href="#autowinpy.find_window" title="정의 주소">¶</a></dt>
-<dd><p>정규표현식으로 윈도우를 찾습니다.</p>
-<dl class="field-list simple">
-<dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>정규식 규칙을 포함하는 <a class="reference internal" href="c_Gui.html#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gui</span></code></a> 리스트</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">참고</p>
-<p><code class="docutils literal notranslate"><span class="pre">re.search()</span></code> 를 만족하는 윈도우를 출력하기 때문에,
-문자열을 포함하거나 일치하는 윈도우를 찾을 때도 활용할
-수 있습니다.</p>
-</div>
-</dd></dl>
-
+  <div class="section" id="id1">
+<h1>튜토리얼<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="window_and_child.html">윈도우와 컨트롤</a></li>
+</ul>
 </div>
 </div>
 
@@ -233,10 +187,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="c_Gui.html" class="btn btn-neutral float-right" title="Gui 클래스" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="window_and_child.html" class="btn btn-neutral float-right" title="윈도우와 컨트롤" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../tutorial/window_and_child.html" class="btn btn-neutral float-left" title="윈도우와 컨트롤" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="AutoWinPy 사용자 문서" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

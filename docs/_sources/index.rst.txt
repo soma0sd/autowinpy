@@ -5,9 +5,10 @@ AutoWinPy 사용자 문서
   :start-line: 17
 
 .. toctree::
-   :hidden:
-
-   reference/index
+  :hidden:
+  
+  tutorial/index
+  reference/index
 
 * :ref:`genindex`
 * :ref:`modindex`
