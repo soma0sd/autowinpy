@@ -5,12 +5,13 @@
 사각형 영역
 ============
 .. autoclass:: autowinpy.type.Rect
-  :members:
-  :member-order: bysource
+.. automethod:: autowinpy.type.Rect.xyxy
+.. automethod:: autowinpy.type.Rect.xywh
+
 
 
 이미지
 =======
 .. autoclass:: autowinpy.type.Image
-  :members:
-  :member-order: bysource
+.. automethod:: autowinpy.type.Image.size
+.. automethod:: autowinpy.type.Image.channel

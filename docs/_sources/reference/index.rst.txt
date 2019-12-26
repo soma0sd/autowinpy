@@ -15,5 +15,6 @@
    c_Gui
    c_Template
    m_win32
+   m_atk
    c_types
    m_inner

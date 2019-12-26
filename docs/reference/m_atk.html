@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>패키지 내부 함수 &mdash; AutoWinPy 0.4.0 문서</title>
+  <title>tkinter 지원 모듈 &mdash; AutoWinPy 0.4.0 문서</title>
   
 
   
@@ -41,7 +41,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="index" title="색인" href="../genindex.html" />
   <link rel="search" title="검색" href="../search.html" />
-  <link rel="prev" title="패키지 내부 타입" href="c_types.html" /> 
+  <link rel="next" title="패키지 내부 타입" href="c_types.html" />
+  <link rel="prev" title="win32 모듈" href="m_win32.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,12 +92,9 @@
 <li class="toctree-l2"><a class="reference internal" href="c_Gui.html">Gui 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_Template.html">템플릿 클래스</a></li>
 <li class="toctree-l2"><a class="reference internal" href="m_win32.html">win32 모듈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_atk.html">tkinter 지원 모듈</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tkinter 지원 모듈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_types.html">패키지 내부 타입</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">패키지 내부 함수</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">초기화 함수</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="m_inner.html">패키지 내부 함수</a></li>
 </ul>
 </li>
 </ul>
@@ -146,13 +144,13 @@
         
           <li><a href="index.html">레퍼런스</a> &raquo;</li>
         
-      <li>패키지 내부 함수</li>
+      <li>tkinter 지원 모듈</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/m_inner.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/reference/m_atk.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -172,25 +170,43 @@
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 
-  <div class="section" id="id1">
-<h1>패키지 내부 함수<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
-<div class="section" id="id2">
-<h2>초기화 함수<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+  <div class="section" id="tkinter">
+<h1>tkinter 지원 모듈<a class="headerlink" href="#tkinter" title="제목 주소">¶</a></h1>
 <dl class="function">
-<dt id="autowinpy.core._set_windows_dpi">
-<code class="sig-prename descclassname">autowinpy.core.</code><code class="sig-name descname">_set_windows_dpi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#autowinpy.core._set_windows_dpi" title="정의 주소">¶</a></dt>
-<dd><p>windows 8.1 이상을 위한 DPI 조정.</p>
+<dt id="autowinpy.atk.image_tk">
+<code class="sig-prename descclassname">autowinpy.atk.</code><code class="sig-name descname">image_tk</code><span class="sig-paren">(</span><em class="sig-param">image: autowinpy.type.Image</em>, <em class="sig-param">dsize: Tuple[int</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">fill: bool = False</em><span class="sig-paren">)</span> &#x2192; ImageTk<a class="headerlink" href="#autowinpy.atk.image_tk" title="정의 주소">¶</a></dt>
+<dd><p>autowinpy의 이미지를 tkinter 이미지로 변환</p>
 <dl class="field-list simple">
-<dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>DPI 배율</p>
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> – 변환할 이미지</p></li>
+<li><p><strong>dsize</strong> – [옵션] 기본값 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>fill</strong> – [옵션] 기본값 <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">반환값</dt>
+<dd class="field-even"><p>tkinter 이미지</p>
 </dd>
 </dl>
-<p>프로세스가 HIDPI 모드로 변경됩니다.
-이 작업은 좌표 기반의 윈도우 핸들링을 위해
-반드시 필요합니다.</p>
 </dd></dl>
 
-</div>
+<dl class="class">
+<dt id="autowinpy.atk.GuiSelectCombo">
+<em class="property">class </em><code class="sig-prename descclassname">autowinpy.atk.</code><code class="sig-name descname">GuiSelectCombo</code><span class="sig-paren">(</span><em class="sig-param">master=None</em>, <em class="sig-param">window_combo: Optional[autowinpy.atk.GuiSelectCombo] = None</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.atk.GuiSelectCombo" title="정의 주소">¶</a></dt>
+<dd><p>tkinter를 위한 Gui 선택 콤보박스</p>
+<p>이 클래스는 <a class="reference external" href="https://www.tcl.tk/man/tcl8.6/TkCmd/ttk_combobox.htm">tkinter.ttk.Combobox</a> 를 상속합니다.</p>
+<dl class="field-list simple">
+<dt class="field-odd">매개변수</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>master</strong> – 상위 Tkinter 요소</p></li>
+<li><p><strong>window_combo</strong> – 상위 <code class="docutils literal notranslate"><span class="pre">GuiSelectCombo</span></code> 를 매개변수로 입력하면,
+이 클래스는 자식 선택 콤보박스로 동작합니다.</p></li>
+<li><p><strong>**kw</strong> – Tkinter 위젯 설정</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -208,8 +224,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="c_types.html" class="btn btn-neutral float-right" title="패키지 내부 타입" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="c_types.html" class="btn btn-neutral float-left" title="패키지 내부 타입" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="m_win32.html" class="btn btn-neutral float-left" title="win32 모듈" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -11,7 +11,7 @@ class GuiSelectCombo(ttk.Combobox):
 
     Args:
         master: 상위 Tkinter 요소
-        window_combo: 상위 ``GuiSelectCombo``를 매개변수로 입력하면,
+        window_combo: 상위 ``GuiSelectCombo`` 를 매개변수로 입력하면,
             이 클래스는 자식 선택 콤보박스로 동작합니다.
         **kw: Tkinter 위젯 설정
 
