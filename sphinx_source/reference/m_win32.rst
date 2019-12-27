@@ -10,3 +10,5 @@ win32 모듈
   .. autofunction:: window_text
   .. autofunction:: window_rect
   .. autofunction:: window_array
+  .. autofunction:: post_cilck
+  .. autofunction:: post_drag

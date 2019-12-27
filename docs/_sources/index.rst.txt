@@ -7,7 +7,7 @@ AutoWinPy 사용자 문서
 .. toctree::
   :hidden:
   
-  tutorial/index
+  examples/index
   reference/index
 
 * :ref:`genindex`

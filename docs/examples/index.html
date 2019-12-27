@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gui 클래스 &mdash; AutoWinPy 0.4.1 문서</title>
+  <title>예제 목록 &mdash; AutoWinPy 0.4.1 문서</title>
   
 
   
@@ -41,8 +41,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="index" title="색인" href="../genindex.html" />
   <link rel="search" title="검색" href="../search.html" />
-  <link rel="next" title="템플릿 클래스" href="c_Template.html" />
-  <link rel="prev" title="레퍼런스" href="index.html" /> 
+  <link rel="next" title="윈도우와 컨트롤 선택" href="window_and_child.html" />
+  <link rel="prev" title="AutoWinPy 사용자 문서" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,21 +87,12 @@
           
           
           <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">예제 목록</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">레퍼런스</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#autowinpy">AutoWinPy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Gui 클래스</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">객체</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">함수</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">예제 목록</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="window_and_child.html">윈도우와 컨트롤 선택</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drag_in_paint.html">드래그 명령(그림판)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="c_Template.html">템플릿 클래스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_win32.html">win32 모듈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_atk.html">tkinter 지원 모듈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_types.html">패키지 내부 타입</a></li>
-<li class="toctree-l2"><a class="reference internal" href="m_inner.html">패키지 내부 함수</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">레퍼런스</a></li>
 </ul>
 
           
@@ -147,15 +138,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">레퍼런스</a> &raquo;</li>
-        
-      <li>Gui 클래스</li>
+      <li>예제 목록</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/c_Gui.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/examples/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -175,55 +164,13 @@
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 
-  <div class="section" id="gui">
-<h1>Gui 클래스<a class="headerlink" href="#gui" title="제목 주소">¶</a></h1>
-<dl class="class">
-<dt id="autowinpy.Gui">
-<em class="property">class </em><code class="sig-prename descclassname">autowinpy.</code><code class="sig-name descname">Gui</code><span class="sig-paren">(</span><em class="sig-param">hwnd: int</em><span class="sig-paren">)</span><a class="headerlink" href="#autowinpy.Gui" title="정의 주소">¶</a></dt>
-<dd><p>윈도우 앱 제어 클래스</p>
-<dl class="field-list simple">
-<dt class="field-odd">매개변수</dt>
-<dd class="field-odd"><p><strong>hwnd</strong> – 핸들 ID</p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="section" id="id1">
-<h2>객체<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
-<dl class="method">
-<dt id="autowinpy.Gui.hwnd">
-<em class="property">property </em><code class="sig-prename descclassname">Gui.</code><code class="sig-name descname">hwnd</code><a class="headerlink" href="#autowinpy.Gui.hwnd" title="정의 주소">¶</a></dt>
-<dd><p>(int) 윈도우 핸들 ID</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autowinpy.Gui.name">
-<em class="property">property </em><code class="sig-prename descclassname">Gui.</code><code class="sig-name descname">name</code><a class="headerlink" href="#autowinpy.Gui.name" title="정의 주소">¶</a></dt>
-<dd><p>(str) 윈도우 이름</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autowinpy.Gui.rect">
-<em class="property">property </em><code class="sig-prename descclassname">Gui.</code><code class="sig-name descname">rect</code><a class="headerlink" href="#autowinpy.Gui.rect" title="정의 주소">¶</a></dt>
-<dd><p>윈도우 <a class="reference internal" href="c_types.html#autowinpy.type.Rect" title="autowinpy.type.Rect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rect</span></code></a>
-사각영역 객체</p>
-</dd></dl>
-
-</div>
-<div class="section" id="id2">
-<h2>함수<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
-<dl class="method">
-<dt id="autowinpy.Gui.childs">
-<code class="sig-prename descclassname">Gui.</code><code class="sig-name descname">childs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[autowinpy.Gui]<a class="headerlink" href="#autowinpy.Gui.childs" title="정의 주소">¶</a></dt>
-<dd><p>자식 <a class="reference internal" href="#autowinpy.Gui" title="autowinpy.Gui"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gui</span></code></a> 목록 출력</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autowinpy.Gui.image_array">
-<code class="sig-prename descclassname">Gui.</code><code class="sig-name descname">image_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; autowinpy.type.Image<a class="headerlink" href="#autowinpy.Gui.image_array" title="정의 주소">¶</a></dt>
-<dd><p>이미지 출력</p>
-</dd></dl>
-
+  <div class="section" id="id1">
+<h1>예제 목록<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="window_and_child.html">윈도우와 컨트롤 선택</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_in_paint.html">드래그 명령(그림판)</a></li>
+</ul>
 </div>
 </div>
 
@@ -242,10 +189,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="c_Template.html" class="btn btn-neutral float-right" title="템플릿 클래스" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="window_and_child.html" class="btn btn-neutral float-right" title="윈도우와 컨트롤 선택" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="레퍼런스" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="AutoWinPy 사용자 문서" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
