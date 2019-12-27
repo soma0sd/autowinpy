@@ -7,6 +7,8 @@ from ._handle import (
     window_rect,
     window_array,
     is_active_gui,
+    post_cilck,
+    post_drag,
 )
 
 __all__ = [

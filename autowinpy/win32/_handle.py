@@ -2,16 +2,17 @@
 
 """
 from ctypes import windll
+from time import sleep
 from typing import List, Tuple
 
 import numpy
 from PIL import Image as pil_Image
 from pythonwin import win32ui
-from win32 import win32gui
+from win32 import win32api, win32gui
 
 import cv2
 
-from ..type import Rect, Image
+from ..type import Image, Rect
 
 
 def handle_list() -> List[int]:
@@ -104,3 +105,40 @@ def window_array(hwnd: int) -> Image:
     new_dc.DeleteDC()
     win32gui.ReleaseDC(hwnd, window_dc)
     return Image(img)
+
+def post_cilck(hwnd: int, x: int, y: int):
+    """핸들로 클릭 메시지 전송
+
+    Args:
+        hwnd: GUI 핸들
+        x: 클릭할 x 좌표
+        y: 클릭할 y 좌표
+    """
+    lParam: int = x | y << 16
+    win32api.PostMessage(hwnd, 0x0201, 0x0001, lParam)
+    sleep(0.01)
+    win32api.PostMessage(hwnd, 0x0202, 0x0000, lParam)
+    sleep(0.01)
+
+def post_drag(hwnd: int, x0: int, y0: int, x1: int, y1: int, dtime: float=0.01):
+    """핸들로 드래그 메시지 전송
+    
+    Args:
+        hwnd: GUI 핸들
+        x0: 드래그를 시작할 x 좌표
+        y0: 드래그를 시작할 y 좌표
+        x1: 드래그를 끝낼 x 좌표
+        y1: 드래그를 끝낼 y 좌표
+        dtime: 이동 스탭별 시간 간격. 기본값 ``0.01`` (초)
+    """
+    lParam = lambda x, y: x | y << 16
+    distance = int(numpy.sqrt(pow(abs(x1-x0), 2) + pow(abs(y1-y0), 2)) / 3)
+    position = numpy.linspace(x0, x1, distance), numpy.linspace(y0, y1, distance)
+    win32api.PostMessage(hwnd, 0x0201, 0x0001, lParam(x0, y0))
+    sleep(dtime)
+    for x, y in zip(*position):
+        x, y = int(x), int(y)
+        win32api.PostMessage(hwnd, 0x0200, 0x0001, lParam(x, y))
+        sleep(dtime)
+    win32api.PostMessage(hwnd, 0x0202, 0x0000, lParam(x1, y1))
+    sleep(dtime)
