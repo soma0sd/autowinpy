@@ -23,6 +23,10 @@ class Gui:
         """출력"""
         return self.name
 
+    def __repr__(self):
+        """터미널 출력"""
+        return "({}) {}".format(self.hwnd, self.name)
+
     @property
     def _is_active(self) -> bool:
         return win32.is_active_gui(self.hwnd)
