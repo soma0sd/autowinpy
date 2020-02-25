@@ -1,7 +1,7 @@
 ﻿alabaster==0.7.12
 Babel==2.7.0
 beautifulsoup4==4.8.1
-표백제> = 3.1.1
+bleach>=3.1.1
 certifi==2019.11.28
 cffi==1.13.2
 chardet==3.0.4
