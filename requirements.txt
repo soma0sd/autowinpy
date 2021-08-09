@@ -33,7 +33,7 @@ pyOpenSSL==19.1.0
 pyparsing==2.4.5
 PySocks==1.7.1
 pytz==2019.3
-pywin32==225
+pywin32==301
 pywin32-ctypes==0.2.0
 readme-renderer==24.0
 requests==2.22.0
