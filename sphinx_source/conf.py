@@ -36,7 +36,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
-    'm2r',
+    'sphinx_mdinclude',
     'sphinx_sitemap'
 ]
 napoleon_google_docstring = True

@@ -1,60 +1,27 @@
-﻿alabaster==0.7.12
-Babel==2.9.1
-beautifulsoup4==4.8.1
-bleach>=3.1.1
-certifi==2019.11.28
-cffi==1.13.2
-chardet==3.0.4
-cmarkgfm==0.4.2
-colorama==0.4.3
-cryptography==2.8
-doc8==0.8.0
-docutils==0.15.2
-entrypoints==0.3
-future==0.18.2
-idna==2.8
-imagesize==1.1.0
-Jinja2==2.10.3
-keyring==21.0.0
-lxml==4.4.2
-m2r==0.2.1
-MarkupSafe==1.1.1
-mistune==0.8.4
-numpy==1.17.3
-olefile==0.46
-packaging==19.2
-pbr==5.4.4
-Pillow==8.3.2
-pkginfo==1.5.0.1
-pycparser==2.19
-pydocstyle==5.0.1
-Pygments==2.5.2
-pyOpenSSL==19.1.0
-pyparsing==2.4.5
-PySocks==1.7.1
-pytz==2019.3
-pywin32==225
-pywin32-ctypes==0.2.0
-readme-renderer==24.0
-requests==2.22.0
-requests-toolbelt==0.9.1
-restructuredtext-lint==1.3.0
-six==1.13.0
-snowballstemmer==2.0.0
-soupsieve==1.9.5
-Sphinx==2.3.0
-sphinx-sitemap==1.1.0
-sphinxcontrib-applehelp==1.0.1
-sphinxcontrib-devhelp==1.0.1
-sphinxcontrib-htmlhelp==1.0.2
-sphinxcontrib-jsmath==1.0.1
-sphinxcontrib-qthelp==1.0.2
-sphinxcontrib-serializinghtml==1.1.3
-stevedore==1.31.0
-tqdm==4.41.0
-twine==3.1.1
-urllib3==1.25.7
-webencodings==0.5.1
-win-inet-pton==1.1.0
-wincertstore==0.2
-yapf==0.28.0
+# Development environment for autowinpy.
+#
+# Runtime dependencies are declared in setup.py (install_requires) and are
+# repeated here so a development checkout is usable on its own. Versions are
+# intentionally unpinned: this file used to be a full `pip freeze` snapshot
+# from 2019, which left the repository carrying dozens of stale transitive
+# pins and the security alerts that came with them.
+
+# Runtime (mirrors setup.py install_requires)
+numpy
+opencv-python
+Pillow
+pywin32
+
+# Documentation
+Sphinx
+sphinx-sitemap
+sphinx-mdinclude
+
+# Lint / format
+doc8
+pydocstyle
+yapf
+
+# Packaging / release
+build
+twine
